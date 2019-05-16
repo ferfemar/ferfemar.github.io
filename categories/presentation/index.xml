@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>presentation on overloaded bits</title>
+    <link>/categories/presentation/</link>
+    <description>Recent content in presentation on overloaded bits</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/presentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Present</title>
+      <link>/presentations/mypresentation/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/mypresentation/</guid>
+      <description>See this awesome presentation  # In the morning___## Getting up- Turn off alarm- Get out of bed___## Breakfast- Eat eggs- Drink coffee---# In the evening___## Dinner- Eat spaghetti- Drink wine___## Going to sleep- Get in bed- Count sheep       function initSlides() { Reveal.initialize({ embedded : true, controls : false, center: true ,	history: false , progress: false , transition: &#34;</description>
+    </item>
+    
+  </channel>
+</rss>

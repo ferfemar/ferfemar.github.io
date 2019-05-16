@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>igmp on overloaded bits</title>
+    <link>/categories/igmp/</link>
+    <description>Recent content in igmp on overloaded bits</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/igmp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IGMP</title>
+      <link>/multicast/igmp/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/multicast/igmp/</guid>
+      <description> IGMP is a protocol &amp;hellip;
+print(test) IGMPv1 IGMPv1 is
+IGMPv2 IGMPv2 is
+IGMPv3 IGMPv3 is
+Resources Decoding packets youtube channel, excelent deep-dive to all of multicast: https://www.youtube.com/channel/UC2xDUkd_PuxDvhl4zQz67Aw
+  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,9 +6,80 @@
     <description>Recent content on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible for Junos basics</title>
+      <link>/netops/ansible/ansible-w-junos/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/ansible-w-junos/</guid>
+      <description> test </description>
+    </item>
+    
+    <item>
+      <title>Ansible timestamps</title>
+      <link>/netops/ansible/working-with-timestamp/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/working-with-timestamp/</guid>
+      <description> test Danger !  </description>
+    </item>
+    
+    <item>
+      <title>IGMP</title>
+      <link>/multicast/igmp/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/multicast/igmp/</guid>
+      <description> IGMP is a protocol &amp;hellip;
+print(test) IGMPv1 IGMPv1 is
+IGMPv2 IGMPv2 is
+IGMPv3 IGMPv3 is
+Resources Decoding packets youtube channel, excelent deep-dive to all of multicast: https://www.youtube.com/channel/UC2xDUkd_PuxDvhl4zQz67Aw
+  </description>
+    </item>
+    
+    <item>
+      <title>L3VPN</title>
+      <link>/mpls-vpns/l3vpn/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/mpls-vpns/l3vpn/</guid>
+      <description>L3VPN is awesome
+so awesome</description>
+    </item>
+    
+    <item>
+      <title>Present</title>
+      <link>/presentations/mypresentation/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/mypresentation/</guid>
+      <description>See this awesome presentation  # In the morning___## Getting up- Turn off alarm- Get out of bed___## Breakfast- Eat eggs- Drink coffee---# In the evening___## Dinner- Eat spaghetti- Drink wine___## Going to sleep- Get in bed- Count sheep       function initSlides() { Reveal.initialize({ embedded : true, controls : false, center: true ,	history: false , progress: false , transition: &#34;</description>
+    </item>
+    
+    <item>
+      <title>Python basics</title>
+      <link>/netops/python/python-basics/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/python/python-basics/</guid>
+      <description> test </description>
+    </item>
+    
+    <item>
+      <title>VPLS</title>
+      <link>/mpls-vpns/vpls/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/mpls-vpns/vpls/</guid>
+      <description>VPLS is awesome
+so awesome</description>
+    </item>
     
   </channel>
 </rss>

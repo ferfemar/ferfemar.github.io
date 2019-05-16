@@ -6,9 +6,100 @@
     <description>Recent content in Categories on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ansible</title>
+      <link>/categories/ansible/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>igmp</title>
+      <link>/categories/igmp/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/igmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>l3vpn</title>
+      <link>/categories/l3vpn/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/l3vpn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mpls</title>
+      <link>/categories/mpls/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/mpls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multicast</title>
+      <link>/categories/multicast/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/multicast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>netops</title>
+      <link>/categories/netops/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/netops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ohyeah</title>
+      <link>/categories/ohyeah/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ohyeah/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>presentation</title>
+      <link>/categories/presentation/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/presentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/categories/python/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpls</title>
+      <link>/categories/vpls/</link>
+      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/vpls/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

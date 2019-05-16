@@ -7,11 +7,172 @@
 	"content": " Overloaded bits "
 },
 {
+	"uri": "/netops/ansible/",
+	"title": "Ansible",
+	"tags": [],
+	"description": "",
+	"content": " Ansible "
+},
+{
+	"uri": "/netops/ansible/ansible-w-junos/",
+	"title": "Ansible for Junos basics",
+	"tags": [],
+	"description": "Basics of using Ansible to manage Juniper devices",
+	"content": " test "
+},
+{
+	"uri": "/netops/ansible/working-with-timestamp/",
+	"title": "Ansible timestamps",
+	"tags": [],
+	"description": "Working with timestamps in Ansible",
+	"content": " test Danger !  "
+},
+{
 	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/multicast/igmp/",
+	"title": "IGMP",
+	"tags": [],
+	"description": "IGMP notes",
+	"content": " IGMP is a protocol \u0026hellip;\nprint(test) IGMPv1 IGMPv1 is\nIGMPv2 IGMPv2 is\nIGMPv3 IGMPv3 is\nResources Decoding packets youtube channel, excelent deep-dive to all of multicast: https://www.youtube.com/channel/UC2xDUkd_PuxDvhl4zQz67Aw\n  "
+},
+{
+	"uri": "/mpls-vpns/l3vpn/",
+	"title": "L3VPN",
+	"tags": [],
+	"description": "L3VPN notes",
+	"content": "L3VPN is awesome\nso awesome\n"
+},
+{
+	"uri": "/mpls-vpns/",
+	"title": "MPLS VPNs",
+	"tags": [],
+	"description": "",
+	"content": "MPLS VPNs are awesome\n L3VPN L3VPN notes\n  VPLS VPLS notes\n  "
+},
+{
+	"uri": "/multicast/",
+	"title": "Multicast",
+	"tags": [],
+	"description": "",
+	"content": " Multicast "
+},
+{
+	"uri": "/presentations/mypresentation/",
+	"title": "Present",
+	"tags": [],
+	"description": "test presentation",
+	"content": " See this awesome presentation  # In the morning\r___\r## Getting up\r- Turn off alarm\r- Get out of bed\r___\r## Breakfast\r- Eat eggs\r- Drink coffee\r---\r# In the evening\r___\r## Dinner\r- Eat spaghetti\r- Drink wine\r___\r## Going to sleep\r- Get in bed\r- Count sheep\r       function initSlides() { Reveal.initialize({ embedded : true, controls : false, center: true ,\thistory: false , progress: false , transition: \"concave\", dependencies: [ { src: '\\/revealjs\\/lib\\/js\\/classList.js\"', condition: function() { return !document.body.classList; } }, { src: '\\/revealjs\\/plugin\\/markdown\\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, { src: '\\/revealjs\\/plugin\\/markdown\\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, { src: '\\/revealjs\\/plugin\\/highlight\\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: '\\/revealjs\\/plugin\\/zoom-js\\/zoom.js', async: true, condition: function() { return !!document.body.classList; } }, { src: '\\/revealjs\\/plugin\\/notes\\/notes.js', async: true, condition: function() { return !!document.body.classList; } } ] }); }   See it fullscreen var toto = document.getElementById('slideContent').innerHTML document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); document.getElementById('slideContent').remove(); document.addEventListener(\"DOMContentLoaded\",function(){ setTimeout(function () { document.getElementById('slideFrame').contentWindow.initSlides() ; }, 2000); }); function slideFullScreen() { document.open(); document.write(toto); document.close(); initSlides() }        function initSlides() { Reveal.initialize({ embedded : true, controls : false, center: true ,\thistory: false , progress: \"true\" , transition: \"concave\", dependencies: [ { src: '\\/revealjs\\/lib\\/js\\/classList.js\"', condition: function() { return !document.body.classList; } }, { src: '\\/revealjs\\/plugin\\/markdown\\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, { src: '\\/revealjs\\/plugin\\/markdown\\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, { src: '\\/revealjs\\/plugin\\/highlight\\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: '\\/revealjs\\/plugin\\/zoom-js\\/zoom.js', async: true, condition: function() { return !!document.body.classList; } }, { src: '\\/revealjs\\/plugin\\/notes\\/notes.js', async: true, condition: function() { return !!document.body.classList; } } ] }); }   See it fullscreen var toto = document.getElementById('slideContent').innerHTML document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); document.getElementById('slideContent').remove(); document.addEventListener(\"DOMContentLoaded\",function(){ setTimeout(function () { document.getElementById('slideFrame').contentWindow.initSlides() ; }, 2000); }); function slideFullScreen() { document.open(); document.write(toto); document.close(); initSlides() }  "
+},
+{
+	"uri": "/presentations/",
+	"title": "Presentations",
+	"tags": [],
+	"description": "",
+	"content": "Presentations are awesome\n Present test presentation\n  "
+},
+{
+	"uri": "/netops/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": " Python "
+},
+{
+	"uri": "/netops/python/python-basics/",
+	"title": "Python basics",
+	"tags": [],
+	"description": "Cheat sheet for absolute basics of Python",
+	"content": " test "
+},
+{
+	"uri": "/mpls-vpns/vpls/",
+	"title": "VPLS",
+	"tags": [],
+	"description": "VPLS notes",
+	"content": "VPLS is awesome\nso awesome\n"
+},
+{
+	"uri": "/categories/ansible/",
+	"title": "ansible",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/igmp/",
+	"title": "igmp",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/l3vpn/",
+	"title": "l3vpn",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/mpls/",
+	"title": "mpls",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/multicast/",
+	"title": "multicast",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/netops/",
+	"title": "netops",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/ohyeah/",
+	"title": "ohyeah",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/presentation/",
+	"title": "presentation",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/python/",
+	"title": "python",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/vpls/",
+	"title": "vpls",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/netops/",
+	"title": "Netops",
+	"tags": [],
+	"description": "",
+	"content": " Netops "
 },
 {
 	"uri": "/tags/",

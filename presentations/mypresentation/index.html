@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-05-16T08:36:40 DST">
-<title>Tags :: overloaded bits</title>
+<title>Present :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="test presentation">
 
 
 
     
   </head>
-  <body data-url="/tags/">
+  <body data-url="/presentations/mypresentation/">
     
       <header>
   <div class="logo">
@@ -136,13 +136,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/presentations/" class="dd-item haschildren
+    <li data-nav-id="/presentations/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/presentations/">Presentations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/presentations/">Presentations</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/presentations/mypresentation/" class="dd-item">
+      <li data-nav-id="/presentations/mypresentation/" class="dd-item active">
         <div>
           <a href="/presentations/mypresentation/">
             Present
@@ -172,7 +173,9 @@
     <option value="/netops/" >
    Netops</option>
     <option value="/presentations/" >
-   Presentations</option>
+   Presentations</option> 
+      <option value="/presentations/mypresentation/"  selected> Present</option>
+  
 
 
 
@@ -195,33 +198,182 @@
       </div>
     
 
-    <h1>Tags</h1>
+    <h1>Present</h1>
     
     
     
+    
+
+<h2 id="see-this-awesome-presentation">See this awesome presentation</h2>
+
+<iframe id="slideFrame" src="/none.html" style="width:100%;height:30em; border:0px"></iframe>
+
+<div id="slideContent">
+	<link rel="stylesheet" href="/revealjs/css/reveal.css">
+	<link rel="stylesheet" href="/revealjs/css/theme/moon.css" id="theme">
+	<link rel="stylesheet" href="/revealjs/lib/css/zenburn.css">
+
+	<div class="reveal">
+	<div class="slides">
+	<section data-markdown
+	         data-separator="^---"
+			 data-separator-vertical="^___"
+			 data-separator-notes="^Note:"
+			 data-charset="utf8">
+		
+
+# In the morning
+
+___
 
 
+## Getting up
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
+- Turn off alarm
+- Get out of bed
 
+___
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+---
+
+# In the evening
+
+___
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+___
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+<iframe id="slideFrame" src="/none.html" style="width:100%;height:30em; border:0px"></iframe>
+
+<div id="slideContent">
+	<link rel="stylesheet" href="/revealjs/css/reveal.css">
+	<link rel="stylesheet" href="/revealjs/css/theme/league.css" id="theme">
+	<link rel="stylesheet" href="/revealjs/lib/css/zenburn.css">
+
+	<div class="reveal">
+	<div class="slides">
+	<section data-markdown
+	         data-separator="^---"
+			 data-separator-vertical="^___"
+			 data-separator-notes="^Note:"
+			 data-charset="utf8">
+		
+	</section>
+	</div>
+	</div>
+
+	<script async src="/revealjs/lib/js/head.min.js"></script>
+	<script async src="/revealjs/js/reveal.js"></script>
+	<script>
+	function initSlides() {
+		Reveal.initialize({
+		      	embedded : true,
+
+		        controls : false, 
+ 				center: true ,		
+		        history: false ,
+		        progress: false ,
+		        transition: "concave",
+
+		        
+		        
+		        dependencies: [
+		          { src: '\/revealjs\/lib\/js\/classList.js"', condition: function() { return !document.body.classList; } },
+		          { src: '\/revealjs\/plugin\/markdown\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/revealjs\/plugin\/markdown\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/revealjs\/plugin\/highlight\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		          { src: '\/revealjs\/plugin\/zoom-js\/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+		          { src: '\/revealjs\/plugin\/notes\/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		        ]
+		      });
+	}
+	</script>
 </div>
+<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
+
+<script type="text/javascript">
+var toto = document.getElementById('slideContent').innerHTML
+document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
+document.getElementById('slideContent').remove();
+document.addEventListener("DOMContentLoaded",function(){
+	  setTimeout(function () {
+      document.getElementById('slideFrame').contentWindow.initSlides() ;
+    }, 2000);
+});
 
 
+function slideFullScreen() {
+	document.open();
+	document.write(toto);
+	document.close();
+	initSlides()
+}
+</script>
+	</section>
+	</div>
+	</div>
 
-<div style="margin-bottom:2rem"></div>
+	<script async src="/revealjs/lib/js/head.min.js"></script>
+	<script async src="/revealjs/js/reveal.js"></script>
+	<script>
+	function initSlides() {
+		Reveal.initialize({
+		      	embedded : true,
 
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
+		        controls : false, 
+ 				center: true ,		
+		        history: false ,
+		        progress: "true" ,
+		        transition: "concave",
+
+		        
+		        
+		        dependencies: [
+		          { src: '\/revealjs\/lib\/js\/classList.js"', condition: function() { return !document.body.classList; } },
+		          { src: '\/revealjs\/plugin\/markdown\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/revealjs\/plugin\/markdown\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/revealjs\/plugin\/highlight\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		          { src: '\/revealjs\/plugin\/zoom-js\/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+		          { src: '\/revealjs\/plugin\/notes\/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		        ]
+		      });
+	}
+	</script>
+</div>
+<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
+
+<script type="text/javascript">
+var toto = document.getElementById('slideContent').innerHTML
+document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
+document.getElementById('slideContent').remove();
+document.addEventListener("DOMContentLoaded",function(){
+	  setTimeout(function () {
+      document.getElementById('slideFrame').contentWindow.initSlides() ;
+    }, 2000);
+});
 
 
+function slideFullScreen() {
+	document.open();
+	document.write(toto);
+	document.close();
+	initSlides()
+}
+</script>
 
 
     
@@ -241,6 +393,10 @@
 
     
 
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 06/04/2012
+    </div>
     
 
     
