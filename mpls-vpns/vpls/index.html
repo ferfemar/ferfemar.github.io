@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-16T08:36:40 DST">
+<meta name="revised" content="2019-05-28T08:33:03 DST">
 <title>VPLS :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="VPLS notes">
+<meta name="description" content="VPLS">
 
 
 
@@ -54,6 +54,36 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
+    <li data-nav-id="/ipspace-course-notes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/ipspace-course-notes/">Building Network Automation Solutions Course Notes</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/ipspace-course-notes/_watch-list/" class="dd-item">
+        <div>
+          <a href="/ipspace-course-notes/_watch-list/">
+            List of materials to study
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/certs/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/certs/">Certifications</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/certs/jncix-sp/" class="dd-item">
+        <div>
+          <a href="/certs/jncix-sp/">
+            JNCIx-SP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/mpls-vpns/" class="dd-item parent haschildren
         ">
       <div>
@@ -61,13 +91,6 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/mpls-vpns/l3vpn/" class="dd-item">
-        <div>
-          <a href="/mpls-vpns/l3vpn/">
-            L3VPN
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/mpls-vpns/vpls/" class="dd-item active">
         <div>
           <a href="/mpls-vpns/vpls/">
@@ -98,6 +121,50 @@
       <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/netops/ansible/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/netops/ansible/">Ansible</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/ansible-w-junos/">
+            Ansible for Junos basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/working-with-timestamp/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/working-with-timestamp/">
+            Ansible timestamps
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/netops/python/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/netops/python/">Python</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/netops/python/python-virtualenvs/" class="dd-item">
+        <div>
+          <a href="/netops/python/python-virtualenvs/">
+            Python basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/python/python-basics/" class="dd-item">
+        <div>
+          <a href="/netops/python/python-basics/">
+            Python basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/presentations/" class="dd-item haschildren
@@ -129,9 +196,12 @@
       <center>Navigation : 
         <select onchange="javascript:location.href = this.value;">
           
+    <option value="/ipspace-course-notes/" >
+   Building Network Automation Solutions Course Notes</option>
+    <option value="/certs/" >
+   Certifications</option>
     <option value="/mpls-vpns/" >
    MPLS VPNs</option> 
-      <option value="/mpls-vpns/l3vpn/" > L3VPN</option>
       <option value="/mpls-vpns/vpls/"  selected> VPLS</option>
   
     <option value="/multicast/" >
@@ -166,16 +236,63 @@
     
     
     
-    <p>VPLS is awesome</p>
+    
 
-<p>so awesome</p>
+<p>Virtual Private LAN Service = VPLS = Layer 2 MPLS VPN</p>
+
+<h2 id="basics">Basics</h2>
+
+<ul>
+<li><p>Variants</p>
+
+<ul>
+<li>RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling</li>
+<li>RFC ???? for LDP</li>
+</ul></li>
+
+<li><p>BGP auto-discovery</p>
+
+<ul>
+<li>PEs auto-discover other PEs in the same VPLS instance</li>
+<li>automatic pseudowire establishment</li>
+<li>full MPLS LSP mesh between PEs (RSVP or LDP signalled)</li>
+</ul></li>
+
+<li><p>BGP or LDP for service label distribution</p></li>
+
+<li><p>Data-plane MAC learning</p>
+
+<ul>
+<li>MAC table per VPLS instance on PE</li>
+<li>BUM flooding over VPLS instance</li>
+</ul></li>
+
+<li><p>Split horizon rules</p>
+
+<ul>
+<li>frame received on PW is never sent back on the same PW</li>
+<li>default: frame received on a PW is not forwarded on any other PW</li>
+</ul></li>
+
+<li><p>Ethernet media only (contrast w/ L2VPN)</p></li>
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="juniper">Juniper</h3>
+
+<p>RRs and PEs have to have BGP <strong>l2vpn signaling</strong> family (AFI=25, SAFI=65) configured to support BGP signaled VPLS:</p>
+
+<pre><code>set protocols bgp group rr-cluster family l2vpn signaling
+</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-</div>
+<a class="nav nav-prev" href="/mpls-vpns/" title="MPLS VPNs"> <i class="fa fa-chevron-left"></i><label>MPLS VPNs</label></a>
+    <a class="nav nav-next" href="/multicast/" title="Multicast" style="margin-right: 0px;"><label>Multicast</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -190,7 +307,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 06/04/2012
+        <i class='fa fa-calendar'></i> Last update on 16/05/2019
     </div>
     
 

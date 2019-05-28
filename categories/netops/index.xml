@@ -6,10 +6,20 @@
     <description>Recent content in netops on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/netops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python basics</title>
+      <link>/netops/python/python-virtualenvs/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/python/python-virtualenvs/</guid>
+      <description>Using mkvirtualenv w/ Python 3
+mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  </description>
+    </item>
     
     <item>
       <title>Ansible for Junos basics</title>

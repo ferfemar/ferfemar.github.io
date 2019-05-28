@@ -6,29 +6,22 @@
     <description>Recent content in mpls on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/mpls/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>L3VPN</title>
-      <link>/mpls-vpns/l3vpn/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/mpls-vpns/l3vpn/</guid>
-      <description>L3VPN is awesome
-so awesome</description>
-    </item>
-    
-    <item>
       <title>VPLS</title>
       <link>/mpls-vpns/vpls/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/mpls-vpns/vpls/</guid>
-      <description>VPLS is awesome
-so awesome</description>
+      <description>Virtual Private LAN Service = VPLS = Layer 2 MPLS VPN
+Basics  Variants
+ RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling RFC ???? for LDP  BGP auto-discovery
+ PEs auto-discover other PEs in the same VPLS instance automatic pseudowire establishment full MPLS LSP mesh between PEs (RSVP or LDP signalled)  BGP or LDP for service label distribution
+ Data-plane MAC learning</description>
     </item>
     
   </channel>

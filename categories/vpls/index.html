@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-05-16T08:36:40 DST">
+<meta name="revised" content="2019-05-28T08:33:03 DST">
 <title>vpls :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -54,19 +54,42 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
+    <li data-nav-id="/ipspace-course-notes/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/ipspace-course-notes/">Building Network Automation Solutions Course Notes</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/ipspace-course-notes/_watch-list/" class="dd-item">
+        <div>
+          <a href="/ipspace-course-notes/_watch-list/">
+            List of materials to study
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/certs/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/certs/">Certifications</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/certs/jncix-sp/" class="dd-item">
+        <div>
+          <a href="/certs/jncix-sp/">
+            JNCIx-SP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/mpls-vpns/" class="dd-item haschildren
         ">
       <div>
       <a href="/mpls-vpns/">MPLS VPNs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/mpls-vpns/l3vpn/" class="dd-item">
-        <div>
-          <a href="/mpls-vpns/l3vpn/">
-            L3VPN
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/mpls-vpns/vpls/" class="dd-item">
         <div>
           <a href="/mpls-vpns/vpls/">
@@ -125,6 +148,13 @@
       <a href="/netops/python/">Python</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/netops/python/python-virtualenvs/" class="dd-item">
+        <div>
+          <a href="/netops/python/python-virtualenvs/">
+            Python basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/netops/python/python-basics/" class="dd-item">
         <div>
           <a href="/netops/python/python-basics/">
@@ -165,6 +195,10 @@
       <center>Navigation : 
         <select onchange="javascript:location.href = this.value;">
           
+    <option value="/ipspace-course-notes/" >
+   Building Network Automation Solutions Course Notes</option>
+    <option value="/certs/" >
+   Certifications</option>
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
@@ -217,8 +251,11 @@
         <h2 class="post-title"><a href="/mpls-vpns/vpls/">VPLS</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>VPLS is awesome
-so awesome <a class="read-more" href="/mpls-vpns/vpls/">&raquo;</a></p>
+        <p>Virtual Private LAN Service = VPLS = Layer 2 MPLS VPN
+Basics  Variants
+ RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling RFC ???? for LDP  BGP auto-discovery
+ PEs auto-discover other PEs in the same VPLS instance automatic pseudowire establishment full MPLS LSP mesh between PEs (RSVP or LDP signalled)  BGP or LDP for service label distribution
+ Data-plane MAC learning <a class="read-more" href="/mpls-vpns/vpls/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -246,7 +283,7 @@ so awesome <a class="read-more" href="/mpls-vpns/vpls/">&raquo;</a></p>
     
         <div class="chevrons">
     <div id="navigation">
-</div>
+<a class="nav nav-next" href="/ipspace-course-notes/" title="Building Network Automation Solutions Course Notes" style="margin-right: 0px;"><label>Building Network Automation Solutions Course Notes</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -261,7 +298,7 @@ so awesome <a class="read-more" href="/mpls-vpns/vpls/">&raquo;</a></p>
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 06/04/2012
+        <i class='fa fa-calendar'></i> Last update on 16/05/2019
     </div>
     
 

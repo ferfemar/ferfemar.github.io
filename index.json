@@ -7,6 +7,139 @@
 	"content": " Overloaded bits "
 },
 {
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/netops/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": " Python "
+},
+{
+	"uri": "/netops/python/python-virtualenvs/",
+	"title": "Python basics",
+	"tags": [],
+	"description": "Notes for working with virualenvs",
+	"content": "Using mkvirtualenv w/ Python 3\nmkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  "
+},
+{
+	"uri": "/categories/netops/",
+	"title": "netops",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/python/",
+	"title": "python",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/virtualenv/",
+	"title": "virtualenv",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/ipspace-course-notes/",
+	"title": "Building Network Automation Solutions Course Notes",
+	"tags": [],
+	"description": "",
+	"content": "Building Network Automation Solutions Course Notes\n List of materials to study List of materials to study\n  "
+},
+{
+	"uri": "/certs/",
+	"title": "Certifications",
+	"tags": [],
+	"description": "",
+	"content": "Certification specific resources\n JNCIx-SP Notes and resources specific to Juniper Service Provider certifications\n  "
+},
+{
+	"uri": "/certs/jncix-sp/",
+	"title": "JNCIx-SP",
+	"tags": [],
+	"description": "Notes and resources specific to Juniper Service Provider certifications",
+	"content": " Links  jncip-sp: the ultimate resource for juniper’s professional service provider cert:  https://www.networkfuntimes.com/jncip-sp-the-ultimate-resource-for-junipers-professional-service-provider-cert/   "
+},
+{
+	"uri": "/ipspace-course-notes/_watch-list/",
+	"title": "List of materials to study",
+	"tags": [],
+	"description": "List of materials to study",
+	"content": " Links  What is NetDevOps? Why? - Leslie Carr (SFMIX), RIPE71 also check the spotify github for production playbooks NAPALM - Elisa Jasinska \u0026amp; David Barroso, NANOG64 How Facebook Learned to Stop Worrying and Love the Network (Jose Leitao, David Rothera, RIPE71)  Solutions  Initial provisioning for Cisco - inc. answering / skipping the initial setup dialog - https://github.com/bittsi/bnas/tree/master/Staging/prepare/tasks  "
+},
+{
+	"uri": "/mpls-vpns/",
+	"title": "MPLS VPNs",
+	"tags": [],
+	"description": "",
+	"content": "MPLS VPNs are awesome\n VPLS VPLS\n  "
+},
+{
+	"uri": "/mpls-vpns/vpls/",
+	"title": "VPLS",
+	"tags": [],
+	"description": "VPLS",
+	"content": " Virtual Private LAN Service = VPLS = Layer 2 MPLS VPN\nBasics  Variants\n RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling RFC ???? for LDP  BGP auto-discovery\n PEs auto-discover other PEs in the same VPLS instance automatic pseudowire establishment full MPLS LSP mesh between PEs (RSVP or LDP signalled)  BGP or LDP for service label distribution\n Data-plane MAC learning\n MAC table per VPLS instance on PE BUM flooding over VPLS instance  Split horizon rules\n frame received on PW is never sent back on the same PW default: frame received on a PW is not forwarded on any other PW  Ethernet media only (contrast w/ L2VPN)\n  Configuration Juniper RRs and PEs have to have BGP l2vpn signaling family (AFI=25, SAFI=65) configured to support BGP signaled VPLS:\nset protocols bgp group rr-cluster family l2vpn signaling  "
+},
+{
+	"uri": "/categories/certifications/",
+	"title": "certifications",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/course-notes/",
+	"title": "course notes",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/jncip-sp/",
+	"title": "jncip-sp",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/juniper/",
+	"title": "juniper",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/mpls/",
+	"title": "mpls",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/vpls/",
+	"title": "vpls",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/vpn/",
+	"title": "vpn",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/netops/ansible/",
 	"title": "Ansible",
 	"tags": [],
@@ -28,32 +161,11 @@
 	"content": " test Danger !  "
 },
 {
-	"uri": "/categories/",
-	"title": "Categories",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "/multicast/igmp/",
 	"title": "IGMP",
 	"tags": [],
 	"description": "IGMP notes",
 	"content": " IGMP is a protocol \u0026hellip;\nprint(test) IGMPv1 IGMPv1 is\nIGMPv2 IGMPv2 is\nIGMPv3 IGMPv3 is\nResources Decoding packets youtube channel, excelent deep-dive to all of multicast: https://www.youtube.com/channel/UC2xDUkd_PuxDvhl4zQz67Aw\n  "
-},
-{
-	"uri": "/mpls-vpns/l3vpn/",
-	"title": "L3VPN",
-	"tags": [],
-	"description": "L3VPN notes",
-	"content": "L3VPN is awesome\nso awesome\n"
-},
-{
-	"uri": "/mpls-vpns/",
-	"title": "MPLS VPNs",
-	"tags": [],
-	"description": "",
-	"content": "MPLS VPNs are awesome\n L3VPN L3VPN notes\n  VPLS VPLS notes\n  "
 },
 {
 	"uri": "/multicast/",
@@ -77,25 +189,11 @@
 	"content": "Presentations are awesome\n Present test presentation\n  "
 },
 {
-	"uri": "/netops/python/",
-	"title": "Python",
-	"tags": [],
-	"description": "",
-	"content": " Python "
-},
-{
 	"uri": "/netops/python/python-basics/",
 	"title": "Python basics",
 	"tags": [],
 	"description": "Cheat sheet for absolute basics of Python",
 	"content": " test "
-},
-{
-	"uri": "/mpls-vpns/vpls/",
-	"title": "VPLS",
-	"tags": [],
-	"description": "VPLS notes",
-	"content": "VPLS is awesome\nso awesome\n"
 },
 {
 	"uri": "/categories/ansible/",
@@ -112,29 +210,8 @@
 	"content": ""
 },
 {
-	"uri": "/categories/l3vpn/",
-	"title": "l3vpn",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/categories/mpls/",
-	"title": "mpls",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "/categories/multicast/",
 	"title": "multicast",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/categories/netops/",
-	"title": "netops",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -149,20 +226,6 @@
 {
 	"uri": "/categories/presentation/",
 	"title": "presentation",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/categories/python/",
-	"title": "python",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/categories/vpls/",
-	"title": "vpls",
 	"tags": [],
 	"description": "",
 	"content": ""

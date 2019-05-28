@@ -4,7 +4,113 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/netops/python/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netops/python/python-virtualenvs/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/netops/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/virtualenv/</loc>
+    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/ipspace-course-notes/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/certs/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/certs/jncix-sp/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ipspace-course-notes/_watch-list/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mpls-vpns/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/mpls-vpns/vpls/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/certifications/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/course-notes/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/jncip-sp/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/juniper/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/mpls/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/vpls/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/vpn/</loc>
+    <lastmod>2019-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,23 +129,7 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/multicast/igmp/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/mpls-vpns/l3vpn/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/mpls-vpns/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -59,17 +149,7 @@
   </url>
   
   <url>
-    <loc>/netops/python/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/netops/python/python-basics/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/mpls-vpns/vpls/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -86,25 +166,7 @@
   </url>
   
   <url>
-    <loc>/categories/l3vpn/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/mpls/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/multicast/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/netops/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -117,18 +179,6 @@
   
   <url>
     <loc>/categories/presentation/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/python/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/vpls/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

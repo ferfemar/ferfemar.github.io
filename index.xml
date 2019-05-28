@@ -6,10 +6,51 @@
     <description>Recent content on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python basics</title>
+      <link>/netops/python/python-virtualenvs/</link>
+      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/python/python-virtualenvs/</guid>
+      <description>Using mkvirtualenv w/ Python 3
+mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  </description>
+    </item>
+    
+    <item>
+      <title>JNCIx-SP</title>
+      <link>/certs/jncix-sp/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/certs/jncix-sp/</guid>
+      <description> Links  jncip-sp: the ultimate resource for juniper’s professional service provider cert:  https://www.networkfuntimes.com/jncip-sp-the-ultimate-resource-for-junipers-professional-service-provider-cert/   </description>
+    </item>
+    
+    <item>
+      <title>List of materials to study</title>
+      <link>/ipspace-course-notes/_watch-list/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/ipspace-course-notes/_watch-list/</guid>
+      <description> Links  What is NetDevOps? Why? - Leslie Carr (SFMIX), RIPE71 also check the spotify github for production playbooks NAPALM - Elisa Jasinska &amp;amp; David Barroso, NANOG64 How Facebook Learned to Stop Worrying and Love the Network (Jose Leitao, David Rothera, RIPE71)  Solutions  Initial provisioning for Cisco - inc. answering / skipping the initial setup dialog - https://github.com/bittsi/bnas/tree/master/Staging/prepare/tasks  </description>
+    </item>
+    
+    <item>
+      <title>VPLS</title>
+      <link>/mpls-vpns/vpls/</link>
+      <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/mpls-vpns/vpls/</guid>
+      <description>Virtual Private LAN Service = VPLS = Layer 2 MPLS VPN
+Basics  Variants
+ RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling RFC ???? for LDP  BGP auto-discovery
+ PEs auto-discover other PEs in the same VPLS instance automatic pseudowire establishment full MPLS LSP mesh between PEs (RSVP or LDP signalled)  BGP or LDP for service label distribution
+ Data-plane MAC learning</description>
+    </item>
     
     <item>
       <title>Ansible for Junos basics</title>
@@ -44,16 +85,6 @@ Resources Decoding packets youtube channel, excelent deep-dive to all of multica
     </item>
     
     <item>
-      <title>L3VPN</title>
-      <link>/mpls-vpns/l3vpn/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/mpls-vpns/l3vpn/</guid>
-      <description>L3VPN is awesome
-so awesome</description>
-    </item>
-    
-    <item>
       <title>Present</title>
       <link>/presentations/mypresentation/</link>
       <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
@@ -69,16 +100,6 @@ so awesome</description>
       
       <guid>/netops/python/python-basics/</guid>
       <description> test </description>
-    </item>
-    
-    <item>
-      <title>VPLS</title>
-      <link>/mpls-vpns/vpls/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/mpls-vpns/vpls/</guid>
-      <description>VPLS is awesome
-so awesome</description>
     </item>
     
   </channel>
