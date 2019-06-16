@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-16T16:48:25 DST">
+<meta name="revised" content="2019-06-16T19:09:30 DST">
 <title>IS-IS :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -260,8 +260,8 @@
 <h2 id="basics">Basics</h2>
 
 <ul>
-<li>originaly ISO protocol (<a href="https://tools.ietf.org/pdf/rfc1195.pdf">ISO 10589</a>)</li>
-<li>RFC 1195 defined for (also) routing TCP/IP</li>
+<li>originaly ISO protocol</li>
+<li><a href="https://tools.ietf.org/pdf/rfc1195.pdf">RFC 1195</a> defined for (also) routing TCP/IP</li>
 <li>SPF algoritm / Dijkstra</li>
 </ul>
 
@@ -351,6 +351,117 @@
 <li>one router is selected to send LSP on behalf of the pseudonode (designated router); reporting links to all of the router on the LAN</li>
 </ul></li>
 </ul>
+
+<h2 id="3-way-handshaking">3-Way handshaking</h2>
+
+<ul>
+<li>LAN Hello uses the IS Neighbors TLV to list all neighbors from which a hello has been received</li>
+
+<li><p>P2P Hellos do not carry IS Neighbors TLVs. ISO 10589 prescribes only two-way handshaking in this case. RFC 3373 specifies P2P Three-way Adjacency TLV (240)</p>
+
+<pre><code>Point-to-point Adjacency State (t=240, l=15)
+Type: 240
+Length: 15
+Adjacency State: Up (0)
+Extended Local circuit ID: 0x00000048
+Neighbor SystemID: 1720.1600.1002
+Neighbor Extended Local circuit ID: 0x00000047
+</code></pre></li>
+</ul>
+
+<h2 id="adjacency-states">Adjacency states</h2>
+
+<ul>
+<li>Up</li>
+<li>Initializing</li>
+<li>Down</li>
+</ul>
+
+<h2 id="debug-outputs">Debug outputs</h2>
+
+<p><strong>set protocols isis traceoptions flag state</strong>
+reset isis adjacency</p>
+
+<pre><code>Jun 16 15:41:36.289849 Adjacency state change, vSRX1, state Up -&gt; Down
+Jun 16 15:41:36.289923     interface ge-0/0/0.0, level 3
+Jun 16 15:41:36.291278 ISIS L3 neighbor vSRX1 on interface ge-0/0/0.0 deleted
+Jun 16 15:41:36.293005 ISIS programmed L3 periodic xmit to 09:00:2b:00:00:05 interface ge-0/0/0.0, interval 9 secs 0 nsecs
+Jun 16 15:41:36.314703 Adjacency state change, vSRX1, state Down -&gt; Initializing
+Jun 16 15:41:36.314769     interface ge-0/0/0.0, level 3
+Jun 16 15:41:36.316573 ISIS L3 neighbor vSRX1 on interface ge-0/0/0.0 set 27 secs 0 nsecs
+Jun 16 15:41:36.318667 ISIS programmed L3 periodic xmit to 09:00:2b:00:00:05 interface ge-0/0/0.0, interval 9 secs 0 nsecs
+Jun 16 15:41:36.344605 Adjacency state change, vSRX1, state Initializing -&gt; Up
+Jun 16 15:41:36.344654     interface ge-0/0/0.0, level 3
+Jun 16 15:41:36.345246 Starting database exchange on ge-0/0/0.0
+Jun 16 15:41:36.346720 ISIS L3 neighbor vSRX1 on interface ge-0/0/0.0 set 27 secs 0 nsecs
+Jun 16 15:41:36.348422 ISIS programmed L3 periodic xmit to 09:00:2b:00:00:05 interface ge-0/0/0.0, interval 9 secs 0 nsecs
+</code></pre>
+
+<p><strong>set protocols isis traceoptions flag packets</strong></p>
+
+<pre><code>*** debugisis ***
+Jun 16 15:53:21 vSRX2 clear-log[1337]: logfile cleared
+Jun 16 15:53:24.345379 Received PTP IIH, source id vSRX1 on ge-0/0/0.0
+Jun 16 15:53:24.346181 Sending PTP IIH on ge-0/0/0.0
+Jun 16 15:53:24.346226     packet length 48
+Jun 16 15:53:24.360054 Received PTP IIH, source id vSRX1 on ge-0/0/0.0
+Jun 16 15:53:24.360373 Sending PTP IIH on ge-0/0/0.0
+Jun 16 15:53:24.360431     packet length 1492
+Jun 16 15:53:24.374327 Updating L1 LSP vSRX2.00-00 in TED
+Jun 16 15:53:24.374646 Updating L2 LSP vSRX2.00-00 in TED
+Jun 16 15:53:24.375810 Received PTP IIH, source id vSRX1 on ge-0/0/0.0
+Jun 16 15:53:24.376482 Sending PTP IIH on ge-0/0/0.0
+Jun 16 15:53:24.376527     packet length 58
+Jun 16 15:53:24.400416 Received L1 LSP vSRX1.00-00, on interface ge-0/0/0.0
+Jun 16 15:53:24.400464     from vSRX1
+Jun 16 15:53:24.400504     sequence 0x10, checksum 0xfaea, lifetime 1198
+Jun 16 15:53:24.400571 Updating L1 LSP vSRX1.00-00 in TED
+Jun 16 15:53:24.400901 Updating L1 LSP vSRX2.00-00 in TED
+Jun 16 15:53:24.401244 Sending L1 LSP vSRX2.00-00 on interface ge-0/0/0.0
+Jun 16 15:53:24.401283     sequence 0x12, checksum 0xe4fa, lifetime 1200
+Jun 16 15:53:24.401322     packet length 150
+Jun 16 15:53:24.401736 Updating L2 LSP vSRX2.00-00 in TED
+Jun 16 15:53:24.420761 Received L2 LSP vSRX1.00-00, on interface ge-0/0/0.0
+Jun 16 15:53:24.420810     from vSRX1
+Jun 16 15:53:24.420861     sequence 0x10, checksum 0x5c3f, lifetime 1198
+Jun 16 15:53:24.420919 Updating L2 LSP vSRX1.00-00 in TED
+Jun 16 15:53:24.421266 Sending L2 LSP vSRX2.00-00 on interface ge-0/0/0.0
+Jun 16 15:53:24.421306     sequence 0x12, checksum 0xff97, lifetime 1200
+Jun 16 15:53:24.421344     packet length 171
+Jun 16 15:53:25.281547 Sending L1 PSN on interface ge-0/0/0.0
+Jun 16 15:53:25.281635     packet length 35
+Jun 16 15:53:25.281684 Sending L2 PSN on interface ge-0/0/0.0
+Jun 16 15:53:25.281723     packet length 35
+Jun 16 15:53:25.298222 Received L1 PSN, source vSRX1, interface ge-0/0/0.0
+Jun 16 15:53:25.299512 Received L2 PSN, source vSRX1, interface ge-0/0/0.0
+Jun 16 15:53:31.810825 ISIS L3 hello from vSRX1 interface ge-0/0/0.0 absorbed
+Jun 16 15:53:32.923675 ISIS L3 periodic xmit to 09:00:2b:00:00:05 interface ge-0/0/0.0
+Jun 16 15:53:35.429957 Sending L1 CSN on interface ge-0/0/0.0
+Jun 16 15:53:35.430041     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:35.430091     packet length 67
+Jun 16 15:53:35.441234 Received L1 CSN, source vSRX1, interface ge-0/0/0.0
+Jun 16 15:53:35.441279     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:35.441318     packet length 67
+Jun 16 15:53:35.454423 Sending L2 CSN on interface ge-0/0/0.0
+Jun 16 15:53:35.454480     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:35.454520     packet length 67
+Jun 16 15:53:35.460799 Received L2 CSN, source vSRX1, interface ge-0/0/0.0
+Jun 16 15:53:35.460849     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:35.460887     packet length 67
+Jun 16 15:53:40.434039 Sending L1 CSN on interface ge-0/0/0.0
+Jun 16 15:53:40.434126     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:40.434167     packet length 67
+Jun 16 15:53:40.446845 ISIS L3 hello from vSRX1 interface ge-0/0/0.0 absorbed
+Jun 16 15:53:40.448599 Received L1 CSN, source vSRX1, interface ge-0/0/0.0
+Jun 16 15:53:40.448641     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:40.448679     packet length 67
+Jun 16 15:53:40.458292 Sending L2 CSN on interface ge-0/0/0.0
+Jun 16 15:53:40.458352     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:40.458392     packet length 67
+Jun 16 15:53:40.475493 Received L2 CSN, source vSRX1, interface ge-0/0/0.0
+Jun 16 15:53:40.475543     LSP range 0000.0000.0000.00-00 to ffff.ffff.ffff.ff-ff
+Jun 16 15:53:40.475583     packet length 67
+</code></pre>
 
 
     
