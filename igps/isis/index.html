@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-06-16T16:48:25 DST">
-<title>Netops :: overloaded bits</title>
+<title>IS-IS :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="Integrated IS-IS">
 
 
 
     
   </head>
-  <body data-url="/netops/">
+  <body data-url="/igps/isis/">
     
       <header>
   <div class="logo">
@@ -84,13 +84,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/" class="dd-item haschildren
+    <li data-nav-id="/igps/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/">IGPs</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/igps/isis/" class="dd-item">
+      <li data-nav-id="/igps/isis/" class="dd-item active">
         <div>
           <a href="/igps/isis/">
             IS-IS
@@ -129,11 +130,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/" class="dd-item parent active haschildren
+    <li data-nav-id="/netops/" class="dd-item haschildren
         ">
       <div>
-      <a href="/netops/">Netops</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/netops/ansible/" class="dd-item haschildren
@@ -216,18 +216,15 @@
     <option value="/certs/" >
    Certifications</option>
     <option value="/igps/" >
-   IGPs</option>
+   IGPs</option> 
+      <option value="/igps/isis/"  selected> IS-IS</option>
+  
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
    Multicast</option>
-    <option value="/netops/"  selected>
-   Netops</option> 
-    <option value="/netops/ansible/" >
-   Ansible</option>
-    <option value="/netops/python/" >
-   Python</option>
-  
+    <option value="/netops/" >
+   Netops</option>
     <option value="/presentations/" >
    Presentations</option>
 
@@ -252,23 +249,116 @@
       </div>
     
 
-    <h1>Netops</h1>
+    <h1>IS-IS</h1>
     
     
     
+    
 
+<p>Integrated IS-IS</p>
 
+<h2 id="basics">Basics</h2>
 
-<h1 id="netops">Netops</h1>
+<ul>
+<li>originaly ISO protocol (<a href="https://tools.ietf.org/pdf/rfc1195.pdf">ISO 10589</a>)</li>
+<li>RFC 1195 defined for (also) routing TCP/IP</li>
+<li>SPF algoritm / Dijkstra</li>
+</ul>
 
+<h2 id="iso-adressing">ISO Adressing</h2>
+
+<ul>
+<li>Address consists of: IDP + DSP
+
+<ul>
+<li>IDP = Initial Domain Part
+
+<ul>
+<li>part standardized by ISO, specifies format &amp; addressing authority for DSP part</li>
+</ul></li>
+<li>DSP = Domain Specific Part
+
+<ul>
+<li>HO-DSP (High Order part of DSL)</li>
+<li>ID (system identifier)</li>
+<li>SEL (NSAP selector)</li>
+</ul></li>
+</ul></li>
+<li>IDP+HO-DSP can be called area address
+
+<ul>
+<li>for transition purposes there might be multiple area addresses in one area</li>
+<li>area address in OSI addressing allows l1 routers to identify packets to destinations outside their area</li>
+</ul></li>
+</ul>
+
+<h2 id="iso-areas">ISO Areas</h2>
+
+<ul>
+<li>Level 1 and Level 2 areas</li>
+<li>Level 1
+
+<ul>
+<li>L1 routers know the topology inside their area; they do not know the identity of routers outside their area</li>
+<li>L1 routers forward all traffic for destinations outside their area to level 2 router in their area</li>
+<li>L1 routers within an area, based on ID portion of the ISO address</li>
+<li>L1 routers examine the ISO address, if within their own area then they route towards destination, if not they ship the packet to nearest L2 router</li>
+<li>L1 router will become neighbor only with routers in the SAME area</li>
+</ul></li>
+<li>Level 2
+
+<ul>
+<li>L2 routers in Level 2 area do not need to know the topology of level 1 areas as well</li>
+<li>L2 routers route based on area address (IDP+HO-DSP), they route towards areas (without regard to the internal structure of the area)</li>
+<li>L2 router will become neighbor with another L2 router REGARDLESS of area address
+
+<ul>
+<li>only L2 LSPs will flow on link between two different areas</li>
+</ul></li>
+</ul></li>
+<li>L2 router might be also L1 router in one area<br /></li>
+</ul>
+
+<h2 id="ip-areas">IP areas</h2>
+
+<ul>
+<li>Level 1
+
+<ul>
+<li>L1 routers route via L1 routing if destination address MATCHES [IP address, subnet mask, metric] found reachable withing the area</li>
+<li>L1 routes route to nearest L2 router if destination address DOES NOT MATCH ANY [IP address, subnet mask, metric] found reachable withing the area</li>
+</ul></li>
+<li>Level 2
+
+<ul>
+<li>L2 routers include in their L2 LSPs a comple list of  [IP address, subnet mask, metric] specifying all IP addresses found in their area, this is obtained from L1 routers (or configured manually)</li>
+<li>default routes are permitted only at L2</li>
+</ul></li>
+</ul>
+
+<h2 id="broadcast-segments-lans">Broadcast segments (LANs)</h2>
+
+<ul>
+<li>Problem:
+
+<ul>
+<li>multiple routers on LAN - each router would announce a link to every other router (n^2 links reported)</li>
+</ul></li>
+<li>Solution:
+
+<ul>
+<li>create a pseudonode representing the LAN, each router announces it has a link to the pseudonode</li>
+<li>one router is selected to send LSP on behalf of the pseudonode (designated router); reporting links to all of the router on the LAN</li>
+</ul></li>
+</ul>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/presentations/mypresentation/" title="Present"> <i class="fa fa-chevron-left"></i><label>Present</label></a>
-    <a class="nav nav-next" href="/netops/python/" title="Python" style="margin-right: 0px;"><label>Python</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/igps/" title="IGPs"> <i class="fa fa-chevron-left"></i><label>IGPs</label></a>
+    <a class="nav nav-next" href="/ipspace-course-notes/" title="Building Network Automation Solutions Course Notes" style="margin-right: 0px;"><label>Building Network Automation Solutions Course Notes</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -281,6 +371,10 @@
 
     
 
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+    </div>
     
 
     

@@ -14,6 +14,34 @@
 	"content": ""
 },
 {
+	"uri": "/igps/",
+	"title": "IGPs",
+	"tags": [],
+	"description": "",
+	"content": "Interior gateway protocols\n IS-IS Integrated IS-IS\n  "
+},
+{
+	"uri": "/igps/isis/",
+	"title": "IS-IS",
+	"tags": [],
+	"description": "Integrated IS-IS",
+	"content": " Integrated IS-IS\nBasics  originaly ISO protocol (ISO 10589) RFC 1195 defined for (also) routing TCP/IP SPF algoritm / Dijkstra  ISO Adressing  Address consists of: IDP + DSP  IDP = Initial Domain Part  part standardized by ISO, specifies format \u0026amp; addressing authority for DSP part  DSP = Domain Specific Part  HO-DSP (High Order part of DSL) ID (system identifier) SEL (NSAP selector)   IDP+HO-DSP can be called area address  for transition purposes there might be multiple area addresses in one area area address in OSI addressing allows l1 routers to identify packets to destinations outside their area   ISO Areas  Level 1 and Level 2 areas Level 1  L1 routers know the topology inside their area; they do not know the identity of routers outside their area L1 routers forward all traffic for destinations outside their area to level 2 router in their area L1 routers within an area, based on ID portion of the ISO address L1 routers examine the ISO address, if within their own area then they route towards destination, if not they ship the packet to nearest L2 router L1 router will become neighbor only with routers in the SAME area  Level 2  L2 routers in Level 2 area do not need to know the topology of level 1 areas as well L2 routers route based on area address (IDP+HO-DSP), they route towards areas (without regard to the internal structure of the area) L2 router will become neighbor with another L2 router REGARDLESS of area address  only L2 LSPs will flow on link between two different areas   L2 router might be also L1 router in one area\n  IP areas  Level 1  L1 routers route via L1 routing if destination address MATCHES [IP address, subnet mask, metric] found reachable withing the area L1 routes route to nearest L2 router if destination address DOES NOT MATCH ANY [IP address, subnet mask, metric] found reachable withing the area  Level 2  L2 routers include in their L2 LSPs a comple list of [IP address, subnet mask, metric] specifying all IP addresses found in their area, this is obtained from L1 routers (or configured manually) default routes are permitted only at L2   Broadcast segments (LANs)  Problem:  multiple routers on LAN - each router would announce a link to every other router (n^2 links reported)  Solution:  create a pseudonode representing the LAN, each router announces it has a link to the pseudonode one router is selected to send LSP on behalf of the pseudonode (designated router); reporting links to all of the router on the LAN   "
+},
+{
+	"uri": "/categories/igps/",
+	"title": "igps",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/isis/",
+	"title": "isis",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/netops/python/",
 	"title": "Python",
 	"tags": [],

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-06-16T16:48:25 DST">
-<title>Netops :: overloaded bits</title>
+<title>isis :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
     
   </head>
-  <body data-url="/netops/">
+  <body data-url="/categories/isis/">
     
       <header>
   <div class="logo">
@@ -129,11 +129,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/" class="dd-item parent active haschildren
+    <li data-nav-id="/netops/" class="dd-item haschildren
         ">
       <div>
-      <a href="/netops/">Netops</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/netops/ansible/" class="dd-item haschildren
@@ -221,13 +220,8 @@
    MPLS VPNs</option>
     <option value="/multicast/" >
    Multicast</option>
-    <option value="/netops/"  selected>
-   Netops</option> 
-    <option value="/netops/ansible/" >
-   Ansible</option>
-    <option value="/netops/python/" >
-   Python</option>
-  
+    <option value="/netops/" >
+   Netops</option>
     <option value="/presentations/" >
    Presentations</option>
 
@@ -252,14 +246,50 @@
       </div>
     
 
-    <h1>Netops</h1>
+    <h1>isis</h1>
     
     
     
 
 
 
-<h1 id="netops">Netops</h1>
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+</div>
+
+
+   <article class="post igps">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/igps/isis/">IS-IS</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Integrated IS-IS
+Basics  originaly ISO protocol (ISO 10589) RFC 1195 defined for (also) routing TCP/IP SPF algoritm / Dijkstra  ISO Adressing  Address consists of: IDP + DSP  IDP = Initial Domain Part  part standardized by ISO, specifies format &amp; addressing authority for DSP part  DSP = Domain Specific Part  HO-DSP (High Order part of DSL) ID (system identifier) SEL (NSAP selector)   IDP+HO-DSP can be called area address  for transition purposes there might be multiple area addresses in one area area address in OSI addressing allows l1 routers to identify packets to destinations outside their area   ISO Areas  Level 1 and Level 2 areas Level 1  L1 routers know the topology inside their area; they do not know the identity of routers outside their area L1 routers forward all traffic for destinations outside their area to level 2 router in their area L1 routers within an area, based on ID portion of the ISO address L1 routers examine the ISO address, if within their own area then they route towards destination, if not they ship the packet to nearest L2 router L1 router will become neighbor only with routers in the SAME area  Level 2  L2 routers in Level 2 area do not need to know the topology of level 1 areas as well L2 routers route based on area address (IDP+HO-DSP), they route towards areas (without regard to the internal structure of the area) L2 router will become neighbor with another L2 router REGARDLESS of area address  only L2 LSPs will flow on link between two different areas   L2 router might be also L1 router in one area <a class="read-more" href="/igps/isis/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
 
 
 
@@ -267,8 +297,7 @@
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/presentations/mypresentation/" title="Present"> <i class="fa fa-chevron-left"></i><label>Present</label></a>
-    <a class="nav nav-next" href="/netops/python/" title="Python" style="margin-right: 0px;"><label>Python</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -281,6 +310,10 @@
 
     
 
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+    </div>
     
 
     

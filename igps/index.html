@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-06-16T16:48:25 DST">
-<title>Netops :: overloaded bits</title>
+<title>IGPs :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
     
   </head>
-  <body data-url="/netops/">
+  <body data-url="/igps/">
     
       <header>
   <div class="logo">
@@ -84,10 +84,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/" class="dd-item haschildren
+    <li data-nav-id="/igps/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/">IGPs</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/igps/isis/" class="dd-item">
@@ -129,11 +130,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/" class="dd-item parent active haschildren
+    <li data-nav-id="/netops/" class="dd-item haschildren
         ">
       <div>
-      <a href="/netops/">Netops</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/netops/ansible/" class="dd-item haschildren
@@ -215,19 +215,16 @@
    Building Network Automation Solutions Course Notes</option>
     <option value="/certs/" >
    Certifications</option>
-    <option value="/igps/" >
-   IGPs</option>
+    <option value="/igps/"  selected>
+   IGPs</option> 
+      <option value="/igps/isis/" > IS-IS</option>
+  
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
    Multicast</option>
-    <option value="/netops/"  selected>
-   Netops</option> 
-    <option value="/netops/ansible/" >
-   Ansible</option>
-    <option value="/netops/python/" >
-   Python</option>
-  
+    <option value="/netops/" >
+   Netops</option>
     <option value="/presentations/" >
    Presentations</option>
 
@@ -252,14 +249,20 @@
       </div>
     
 
-    <h1>Netops</h1>
+    <h1>IGPs</h1>
     
     
     
 
+<p>Interior gateway protocols</p>
 
+<ul class="children children-h2">
 
-<h1 id="netops">Netops</h1>
+<span><h2>
+        <a href="/igps/isis/" >IS-IS</a></h2>
+<p>Integrated IS-IS</p>
+</span>
+</ul>
 
 
 
@@ -267,8 +270,8 @@
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/presentations/mypresentation/" title="Present"> <i class="fa fa-chevron-left"></i><label>Present</label></a>
-    <a class="nav nav-next" href="/netops/python/" title="Python" style="margin-right: 0px;"><label>Python</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i><label></label></a>
+    <a class="nav nav-next" href="/igps/isis/" title="IS-IS" style="margin-right: 0px;"><label>IS-IS</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -281,6 +284,10 @@
 
     
 
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+    </div>
     
 
     
