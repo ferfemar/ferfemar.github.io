@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>cli</title>
+      <link>/categories/cli/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>igps</title>
       <link>/categories/igps/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
@@ -26,6 +35,15 @@
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/isis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>junos</title>
+      <link>/categories/junos/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/junos/</guid>
       <description></description>
     </item>
     

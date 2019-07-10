@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-10T19:28:29 DST">
+<meta name="revised" content="2019-07-10T20:15:30 DST">
 <title>igps :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -101,6 +101,21 @@
         <div>
           <a href="/igps/ospf/">
             OSPF
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/junos/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/junos/">Junos</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/junos/cli/" class="dd-item">
+        <div>
+          <a href="/junos/cli/">
+            Junos CLI
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -223,6 +238,8 @@
    Certifications</option>
     <option value="/igps/" >
    IGPs</option>
+    <option value="/junos/" >
+   Junos</option>
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
@@ -294,9 +311,8 @@ Basics  originaly ISO protocol RFC 1195 defined for (also) routing TCP/IP SPF al
     </header>
     <section class="post-excerpt">
         <p>OSPF notes
-Troubleshooting Authentication problem is best identified using traceoptions:
-[edit protocols ospf traceoptions] root@vrsx# show file debugospf size 10m; flag hello detail; flag error detail; [edit protocols ospf traceoptions] root@vsrx#  The message for mismatched authentication looks like this:
-Jul 10 19:14:59.687339 OSPF packet ignored: authentication failure (bad cksum). Jul 10 19:14:59.688689 OSPF packet ignored: authentication failure from 172.30.0.26  Message when the other side doesn&rsquo;t use authentication, but it is required: <a class="read-more" href="/igps/ospf/">&raquo;</a></p>
+Troubleshooting Neighborship problems checklist Source: iNET ZERO
+ Interfaces present in [edit protocols ospf] Interfaces are not passive Interfaces are not down No FF is blocking OSPF protocol 89 Area mismatch Timer mismatch Auth. mismatch Area type mismatch Subnet mask mismatch Duplicate router-id MTU mismatch DR priority = 0 on both routers Duplicate interface ip address Interface type mismatch  Tools Show commands. Traceoptions. Monitor traffic interface. <a class="read-more" href="/igps/ospf/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          

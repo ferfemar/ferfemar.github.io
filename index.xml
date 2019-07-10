@@ -22,15 +22,25 @@ Basics  originaly ISO protocol RFC 1195 defined for (also) routing TCP/IP SPF al
     </item>
     
     <item>
+      <title>Junos CLI</title>
+      <link>/junos/cli/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/junos/cli/</guid>
+      <description>Junos CLI tricks
+Show only certain prefix length routes The &amp;ldquo;match-prefix&amp;rdquo; command allows for regex filtering
+root@vsrx&amp;gt; show route protocol ospf match-prefix */32 inet.0: 42 destinations, 42 routes (42 active, 0 holddown, 0 hidden) + = Active Route, - = Last Active, * = Both 172.30.5.2/32 *[OSPF/10] 01:31:06, metric 1 &amp;gt; to 172.30.0.2 via ae0.0 172.30.5.3/32 *[OSPF/10] 01:31:06, metric 2 &amp;gt; to 172.30.0.2 via ae0.0 172.30.5.4/32 *[OSPF/10] 00:43:54, metric 3 &amp;gt; to 172.</description>
+    </item>
+    
+    <item>
       <title>OSPF</title>
       <link>/igps/ospf/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/igps/ospf/</guid>
       <description>OSPF notes
-Troubleshooting Authentication problem is best identified using traceoptions:
-[edit protocols ospf traceoptions] root@vrsx# show file debugospf size 10m; flag hello detail; flag error detail; [edit protocols ospf traceoptions] root@vsrx#  The message for mismatched authentication looks like this:
-Jul 10 19:14:59.687339 OSPF packet ignored: authentication failure (bad cksum). Jul 10 19:14:59.688689 OSPF packet ignored: authentication failure from 172.30.0.26  Message when the other side doesn&amp;rsquo;t use authentication, but it is required:</description>
+Troubleshooting Neighborship problems checklist Source: iNET ZERO
+ Interfaces present in [edit protocols ospf] Interfaces are not passive Interfaces are not down No FF is blocking OSPF protocol 89 Area mismatch Timer mismatch Auth. mismatch Area type mismatch Subnet mask mismatch Duplicate router-id MTU mismatch DR priority = 0 on both routers Duplicate interface ip address Interface type mismatch  Tools Show commands. Traceoptions. Monitor traffic interface.</description>
     </item>
     
     <item>
