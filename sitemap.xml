@@ -19,6 +19,16 @@
   </url>
   
   <url>
+    <loc>/ios-xe/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ios-xe/cli/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/igps/isis/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
@@ -46,6 +56,12 @@
   
   <url>
     <loc>/categories/igps/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/ios-xe/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

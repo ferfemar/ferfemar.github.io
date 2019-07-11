@@ -21,6 +21,20 @@
 	"content": "Interior gateway protocols\n IS-IS Integrated IS-IS\n  OSPF OSPF\n  "
 },
 {
+	"uri": "/ios-xe/",
+	"title": "IOS-XE",
+	"tags": [],
+	"description": "",
+	"content": "IOS XE Notes\n IOS-XE CLI IOS-XE CLI\n  "
+},
+{
+	"uri": "/ios-xe/cli/",
+	"title": "IOS-XE CLI",
+	"tags": [],
+	"description": "IOS-XE CLI",
+	"content": " IOS-XE CLI tricks\nIOS-XE Datapath Packet Trace Feature Run: debug platform condition interface GigabitEthernet0/0/0.100 ipv4 \u0026lt;IP ADDRESS\u0026gt;/32 both debug platform condition start debug platform packet-trace packet 1024 debug platform packet-trace enable Examine: show platform packet-trace statistics show platform packet-trace summ show platform packet-trace packet 1 Delete: debug platform condition stop clear platform packet-trace statistics clear platform condition all  Source Cisco Docs\n"
+},
+{
 	"uri": "/igps/isis/",
 	"title": "IS-IS",
 	"tags": [],
@@ -58,6 +72,13 @@
 {
 	"uri": "/categories/igps/",
 	"title": "igps",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/ios-xe/",
+	"title": "ios-xe",
 	"tags": [],
 	"description": "",
 	"content": ""

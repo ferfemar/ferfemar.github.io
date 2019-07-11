@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-11T20:02:19 DST">
-<title>VPLS :: overloaded bits</title>
+<title>ios-xe :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="VPLS">
+<meta name="description" content="">
 
 
 
     
   </head>
-  <body data-url="/mpls-vpns/vpls/">
+  <body data-url="/categories/ios-xe/">
     
       <header>
   <div class="logo">
@@ -136,14 +136,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/mpls-vpns/" class="dd-item parent haschildren
+    <li data-nav-id="/mpls-vpns/" class="dd-item haschildren
         ">
       <div>
-      <a href="/mpls-vpns/">MPLS VPNs</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/mpls-vpns/">MPLS VPNs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/mpls-vpns/vpls/" class="dd-item active">
+      <li data-nav-id="/mpls-vpns/vpls/" class="dd-item">
         <div>
           <a href="/mpls-vpns/vpls/">
             VPLS
@@ -259,9 +258,7 @@
     <option value="/junos/" >
    Junos</option>
     <option value="/mpls-vpns/" >
-   MPLS VPNs</option> 
-      <option value="/mpls-vpns/vpls/"  selected> VPLS</option>
-  
+   MPLS VPNs</option>
     <option value="/multicast/" >
    Multicast</option>
     <option value="/netops/" >
@@ -290,67 +287,58 @@
       </div>
     
 
-    <h1>VPLS</h1>
+    <h1>ios-xe</h1>
     
     
     
-    
 
-<p>Virtual Private LAN Service = VPLS = Layer 2 MPLS VPN</p>
 
-<h2 id="basics">Basics</h2>
 
-<ul>
-<li><p>Variants</p>
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
 
-<ul>
-<li>RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling</li>
-<li>RFC 4762 - Virtual Private LAN Service (VPLS) Using Label Distribution Protocol (LDP) Signaling</li>
-</ul></li>
+</div>
 
-<li><p>BGP auto-discovery</p>
 
-<ul>
-<li>PEs auto-discover other PEs in the same VPLS instance</li>
-<li>automatic pseudowire establishment</li>
-<li>full MPLS LSP mesh between PEs (RSVP or LDP signalled)</li>
-</ul></li>
+   <article class="post ios-xe">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/ios-xe/cli/">IOS-XE CLI</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>IOS-XE CLI tricks
+IOS-XE Datapath Packet Trace Feature Run: debug platform condition interface GigabitEthernet0/0/0.100 ipv4 &lt;IP ADDRESS&gt;/32 both debug platform condition start debug platform packet-trace packet 1024 debug platform packet-trace enable Examine: show platform packet-trace statistics show platform packet-trace summ show platform packet-trace packet 1 Delete: debug platform condition stop clear platform packet-trace statistics clear platform condition all  Source Cisco Docs <a class="read-more" href="/ios-xe/cli/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
 
-<li><p>BGP or LDP for service label distribution</p></li>
+        
+        
 
-<li><p>Data-plane MAC learning</p>
+    </footer>
+</article>
 
-<ul>
-<li>MAC table per VPLS instance on PE</li>
-<li>BUM flooding over VPLS instance</li>
-</ul></li>
 
-<li><p>Split horizon rules</p>
+<div style="margin-bottom:2rem"></div>
 
-<ul>
-<li>frame received on PW is never sent back on the same PW</li>
-<li>default: frame received on a PW is not forwarded on any other PW</li>
-</ul></li>
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
 
-<li><p>Ethernet media only (contrast w/ L2VPN)</p></li>
-</ul>
 
-<h2 id="configuration">Configuration</h2>
-
-<h3 id="juniper">Juniper</h3>
-
-<p>RRs and PEs have to have BGP <strong>l2vpn signaling</strong> family (AFI=25, SAFI=65) configured to support BGP signaled VPLS:</p>
-
-<pre><code>set protocols bgp group rr-cluster family l2vpn signaling
-</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/mpls-vpns/" title="MPLS VPNs"> <i class="fa fa-chevron-left"></i><label>MPLS VPNs</label></a>
-    <a class="nav nav-next" href="/multicast/" title="Multicast" style="margin-right: 0px;"><label>Multicast</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -365,7 +353,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 16/05/2019
+        <i class='fa fa-calendar'></i> Last update on 16/06/2019
     </div>
     
 

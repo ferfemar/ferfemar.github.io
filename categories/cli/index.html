@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-10T20:15:30 DST">
+<meta name="revised" content="2019-07-11T20:02:19 DST">
 <title>cli :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -101,6 +101,21 @@
         <div>
           <a href="/igps/ospf/">
             OSPF
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/ios-xe/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/ios-xe/">IOS-XE</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/ios-xe/cli/" class="dd-item">
+        <div>
+          <a href="/ios-xe/cli/">
+            IOS-XE CLI
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -238,6 +253,8 @@
    Certifications</option>
     <option value="/igps/" >
    IGPs</option>
+    <option value="/ios-xe/" >
+   IOS-XE</option>
     <option value="/junos/" >
    Junos</option>
     <option value="/mpls-vpns/" >
@@ -286,6 +303,24 @@
 
 </div>
 
+
+   <article class="post ios-xe">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/ios-xe/cli/">IOS-XE CLI</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>IOS-XE CLI tricks
+IOS-XE Datapath Packet Trace Feature Run: debug platform condition interface GigabitEthernet0/0/0.100 ipv4 &lt;IP ADDRESS&gt;/32 both debug platform condition start debug platform packet-trace packet 1024 debug platform packet-trace enable Examine: show platform packet-trace statistics show platform packet-trace summ show platform packet-trace packet 1 Delete: debug platform condition stop clear platform packet-trace statistics clear platform condition all  Source Cisco Docs <a class="read-more" href="/ios-xe/cli/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
 
    <article class="post junos">
     <header class="post-header">
