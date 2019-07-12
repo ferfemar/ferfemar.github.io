@@ -18,7 +18,7 @@
 	"title": "GIT",
 	"tags": [],
 	"description": "",
-	"content": " GIT "
+	"content": " GIT  Git Panic Commands What to do when you screw up in GIT\n  "
 },
 {
 	"uri": "/netops/git/panic_buttons/",
@@ -130,7 +130,7 @@
 	"title": "Python",
 	"tags": [],
 	"description": "",
-	"content": " Python "
+	"content": " Python  Python Virtual Enviroments Notes for working with virualenvs\n  Python basics Cheat sheet for absolute basics of Python\n  "
 },
 {
 	"uri": "/netops/python/python-virtualenvs/",
@@ -249,7 +249,7 @@
 	"title": "Ansible",
 	"tags": [],
 	"description": "",
-	"content": " Ansible "
+	"content": " Ansible  Ansible for Junos basics Basics of using Ansible to manage Juniper devices\n  Ansible timestamps Working with timestamps in Ansible\n  "
 },
 {
 	"uri": "/netops/ansible/ansible-w-junos/",
@@ -312,7 +312,7 @@
 	"title": "Netops",
 	"tags": [],
 	"description": "",
-	"content": " Netops "
+	"content": " Netops  GIT  GIT Git Panic Commands What to do when you screw up in GIT   Python  Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   Ansible  Ansible Ansible for Junos basics Basics of using Ansible to manage Juniper devices Ansible timestamps Working with timestamps in Ansible   "
 },
 {
 	"uri": "/tags/",
