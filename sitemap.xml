@@ -4,12 +4,34 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/netops/git/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netops/git/panic_buttons/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/git/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/netops/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,12 +109,6 @@
   <url>
     <loc>/netops/python/python-virtualenvs/</loc>
     <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/netops/</loc>
-    <lastmod>2019-05-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

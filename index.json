@@ -14,6 +14,34 @@
 	"content": ""
 },
 {
+	"uri": "/netops/git/",
+	"title": "GIT",
+	"tags": [],
+	"description": "",
+	"content": " GIT "
+},
+{
+	"uri": "/netops/git/panic_buttons/",
+	"title": "Git Panic Commands",
+	"tags": [],
+	"description": "What to do when you screw up in GIT",
+	"content": " What to do when you screw up in GIT Consult this link: Oh shit, GIT\nEspecially git reflog and git reset HEAD@{index}.\nIf needed to restore the entire working directory you can for example delete everything (but not the .git repo) and do git reset --hard to rebuild the working directory.\n"
+},
+{
+	"uri": "/categories/git/",
+	"title": "git",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/netops/",
+	"title": "netops",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/igps/",
 	"title": "IGPs",
 	"tags": [],
@@ -110,13 +138,6 @@
 	"tags": [],
 	"description": "Notes for working with virualenvs",
 	"content": "Using mkvirtualenv w/ Python 3\nmkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  "
-},
-{
-	"uri": "/categories/netops/",
-	"title": "netops",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "/categories/python/",

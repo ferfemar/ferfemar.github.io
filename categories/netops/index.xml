@@ -6,10 +6,21 @@
     <description>Recent content in netops on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/netops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git Panic Commands</title>
+      <link>/netops/git/panic_buttons/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/git/panic_buttons/</guid>
+      <description>What to do when you screw up in GIT Consult this link: Oh shit, GIT
+Especially git reflog and git reset HEAD@{index}.
+If needed to restore the entire working directory you can for example delete everything (but not the .git repo) and do git reset --hard to rebuild the working directory.</description>
+    </item>
     
     <item>
       <title>Python Virtual Enviroments</title>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-12T09:20:44 DST">
-<title>ansible :: overloaded bits</title>
+<title>Git Panic Commands :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="What to do when you screw up in GIT">
 
 
 
     
   </head>
-  <body data-url="/categories/ansible/">
+  <body data-url="/netops/git/panic_buttons/">
     
       <header>
   <div class="logo">
@@ -136,10 +136,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/" class="dd-item haschildren
+    <li data-nav-id="/netops/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/">Netops</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/netops/ansible/" class="dd-item haschildren
@@ -164,13 +165,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/git/" class="dd-item haschildren
+    <li data-nav-id="/netops/git/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/netops/git/">GIT</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/git/">GIT</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/netops/git/panic_buttons/" class="dd-item">
+      <li data-nav-id="/netops/git/panic_buttons/" class="dd-item active">
         <div>
           <a href="/netops/git/panic_buttons/">
             Git Panic Commands
@@ -250,7 +252,16 @@
     <option value="/multicast/" >
    Multicast</option>
     <option value="/netops/" >
-   Netops</option>
+   Netops</option> 
+    <option value="/netops/ansible/" >
+   Ansible</option>
+    <option value="/netops/git/" >
+   GIT</option> 
+      <option value="/netops/git/panic_buttons/"  selected> Git Panic Commands</option>
+  
+    <option value="/netops/python/" >
+   Python</option>
+  
     <option value="/vendors/" >
    Vendor specifics</option>
 
@@ -275,74 +286,27 @@
       </div>
     
 
-    <h1>ansible</h1>
+    <h1>Git Panic Commands</h1>
     
     
     
+    
 
+<h1 id="what-to-do-when-you-screw-up-in-git">What to do when you screw up in GIT</h1>
 
+<p>Consult this link: <a href="https://ohshitgit.com/">Oh shit, GIT</a></p>
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<p>Especially <code>git reflog</code> and <code>git reset HEAD@{index}</code>.</p>
 
-</div>
-
-
-   <article class="post netops">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/netops/ansible/ansible-w-junos/">Ansible for Junos basics</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> test  <a class="read-more" href="/netops/ansible/ansible-w-junos/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-   <article class="post netops">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/netops/ansible/working-with-timestamp/">Ansible timestamps</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> test Danger !   <a class="read-more" href="/netops/ansible/working-with-timestamp/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-
+<p>If needed to restore the entire working directory you can for example delete everything (but not the .git repo) and do <code>git reset --hard</code> to rebuild the working directory.</p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/netops/git/" title="GIT"> <i class="fa fa-chevron-left"></i><label>GIT</label></a>
+    <a class="nav nav-next" href="/netops/python/" title="Python" style="margin-right: 0px;"><label>Python</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -357,7 +321,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 06/04/2012
+        <i class='fa fa-calendar'></i> Last update on 12/07/2019
     </div>
     
 
