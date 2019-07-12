@@ -13,10 +13,10 @@
     
     <item>
       <title>IOS-XE CLI</title>
-      <link>/ios-xe/cli/</link>
+      <link>/vendors/iosxe_cli/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ios-xe/cli/</guid>
+      <guid>/vendors/iosxe_cli/</guid>
       <description>IOS-XE CLI tricks
 IOS-XE Datapath Packet Trace Feature Run: debug platform condition interface GigabitEthernet0/0/0.100 ipv4 &amp;lt;IP ADDRESS&amp;gt;/32 both debug platform condition start debug platform packet-trace packet 1024 debug platform packet-trace enable Examine: show platform packet-trace statistics show platform packet-trace summ show platform packet-trace packet 1 Delete: debug platform condition stop clear platform packet-trace statistics clear platform condition all  Source Cisco Docs</description>
     </item>

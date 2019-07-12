@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-12T09:15:09 DST">
-<title>junos :: overloaded bits</title>
+<title>IOS-XE CLI :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="IOS-XE CLI">
 
 
 
     
   </head>
-  <body data-url="/categories/junos/">
+  <body data-url="/vendors/iosxe_cli/">
     
       <header>
   <div class="logo">
@@ -188,13 +188,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/vendors/" class="dd-item haschildren
+    <li data-nav-id="/vendors/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/vendors/">Vendor specifics</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/vendors/">Vendor specifics</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/vendors/iosxe_cli/" class="dd-item">
+      <li data-nav-id="/vendors/iosxe_cli/" class="dd-item active">
         <div>
           <a href="/vendors/iosxe_cli/">
             IOS-XE CLI
@@ -237,7 +238,10 @@
     <option value="/netops/" >
    Netops</option>
     <option value="/vendors/" >
-   Vendor specifics</option>
+   Vendor specifics</option> 
+      <option value="/vendors/iosxe_cli/"  selected> IOS-XE CLI</option>
+      <option value="/vendors/junos_cli/" > Junos CLI</option>
+  
 
 
 
@@ -260,59 +264,43 @@
       </div>
     
 
-    <h1>junos</h1>
+    <h1>IOS-XE CLI</h1>
     
     
     
+    
 
+<p>IOS-XE CLI tricks</p>
 
+<h2 id="ios-xe-datapath-packet-trace-feature">IOS-XE Datapath Packet Trace Feature</h2>
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<pre><code>Run:
 
-</div>
+debug platform condition interface GigabitEthernet0/0/0.100 ipv4 &lt;IP ADDRESS&gt;/32 both
+debug platform condition start
+debug platform packet-trace packet 1024 
+debug platform packet-trace enable
 
+Examine:
+show platform packet-trace statistics
+show platform packet-trace summ
+show platform packet-trace packet 1
 
-   <article class="post vendors">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/vendors/junos_cli/">Junos CLI</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Junos CLI tricks
-Show only certain prefix length routes The &ldquo;match-prefix&rdquo; command allows for regex filtering
-root@vsrx&gt; show route protocol ospf match-prefix */32 inet.0: 42 destinations, 42 routes (42 active, 0 holddown, 0 hidden) + = Active Route, - = Last Active, * = Both 172.30.5.2/32 *[OSPF/10] 01:31:06, metric 1 &gt; to 172.30.0.2 via ae0.0 172.30.5.3/32 *[OSPF/10] 01:31:06, metric 2 &gt; to 172.30.0.2 via ae0.0 172.30.5.4/32 *[OSPF/10] 00:43:54, metric 3 &gt; to 172. <a class="read-more" href="/vendors/junos_cli/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
+Delete:
+debug platform condition stop
+clear platform packet-trace statistics  
+clear platform condition all  
+</code></pre>
 
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-
+<p><a href="https://www.cisco.com/c/en/us/support/docs/content-networking/adaptive-session-redundancy-asr/117858-technote-asr-00.html">Source Cisco Docs</a></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/vendors/" title="Vendor specifics"> <i class="fa fa-chevron-left"></i><label>Vendor specifics</label></a>
+    <a class="nav nav-next" href="/vendors/junos_cli/" title="Junos CLI" style="margin-right: 0px;"><label>Junos CLI</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

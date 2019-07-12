@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cli on overloaded bits</title>
-    <link>/categories/cli/</link>
-    <description>Recent content in cli on overloaded bits</description>
+    <title>Vendor specifics on overloaded bits</title>
+    <link>/vendors/</link>
+    <description>Recent content in Vendor specifics on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/cli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/vendors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

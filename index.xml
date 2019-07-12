@@ -13,10 +13,10 @@
     
     <item>
       <title>IOS-XE CLI</title>
-      <link>/ios-xe/cli/</link>
+      <link>/vendors/iosxe_cli/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ios-xe/cli/</guid>
+      <guid>/vendors/iosxe_cli/</guid>
       <description>IOS-XE CLI tricks
 IOS-XE Datapath Packet Trace Feature Run: debug platform condition interface GigabitEthernet0/0/0.100 ipv4 &amp;lt;IP ADDRESS&amp;gt;/32 both debug platform condition start debug platform packet-trace packet 1024 debug platform packet-trace enable Examine: show platform packet-trace statistics show platform packet-trace summ show platform packet-trace packet 1 Delete: debug platform condition stop clear platform packet-trace statistics clear platform condition all  Source Cisco Docs</description>
     </item>
@@ -33,10 +33,10 @@ Basics  originaly ISO protocol RFC 1195 defined for (also) routing TCP/IP SPF al
     
     <item>
       <title>Junos CLI</title>
-      <link>/junos/cli/</link>
+      <link>/vendors/junos_cli/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/junos/cli/</guid>
+      <guid>/vendors/junos_cli/</guid>
       <description>Junos CLI tricks
 Show only certain prefix length routes The &amp;ldquo;match-prefix&amp;rdquo; command allows for regex filtering
 root@vsrx&amp;gt; show route protocol ospf match-prefix */32 inet.0: 42 destinations, 42 routes (42 active, 0 holddown, 0 hidden) + = Active Route, - = Last Active, * = Both 172.30.5.2/32 *[OSPF/10] 01:31:06, metric 1 &amp;gt; to 172.30.0.2 via ae0.0 172.30.5.3/32 *[OSPF/10] 01:31:06, metric 2 &amp;gt; to 172.30.0.2 via ae0.0 172.30.5.4/32 *[OSPF/10] 00:43:54, metric 3 &amp;gt; to 172.</description>
@@ -54,7 +54,7 @@ Troubleshooting Neighborship problems checklist Source: iNET ZERO
     </item>
     
     <item>
-      <title>Python basics</title>
+      <title>Python Virtual Enviroments</title>
       <link>/netops/python/python-virtualenvs/</link>
       <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
       
@@ -78,7 +78,7 @@ mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  </description>
       <pubDate>Thu, 16 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/ipspace-course-notes/watch-list/</guid>
-      <description> Links  What is NetDevOps? Why? - Leslie Carr (SFMIX), RIPE71 also check the spotify github for production playbooks NAPALM - Elisa Jasinska &amp;amp; David Barroso, NANOG64 How Facebook Learned to Stop Worrying and Love the Network (Jose Leitao, David Rothera, RIPE71)  Solutions  Initial provisioning for Cisco - inc. answering / skipping the initial setup dialog - https://github.com/bittsi/bnas/tree/master/Staging/prepare/tasks  </description>
+      <description>Links  What is NetDevOps? Why? - Leslie Carr (SFMIX), RIPE71 also check the spotify github for production playbooks NAPALM - Elisa Jasinska &amp;amp; David Barroso, NANOG64 How Facebook Learned to Stop Worrying and Love the Network (Jose Leitao, David Rothera, RIPE71) Compliance tools  networklore.com/nk-compare-configs github.com/cidrblock/netcopa  Parsing tool TextFSM  Books  Mythical Man-Month - Frederic P. Brooks, 1975  Solutions  Initial provisioning for Cisco - inc.</description>
     </item>
     
     <item>
@@ -123,15 +123,6 @@ IGMPv2 IGMPv2 is
 IGMPv3 IGMPv3 is
 Resources Decoding packets youtube channel, excelent deep-dive to all of multicast: https://www.youtube.com/channel/UC2xDUkd_PuxDvhl4zQz67Aw
   </description>
-    </item>
-    
-    <item>
-      <title>Present</title>
-      <link>/presentations/mypresentation/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/presentations/mypresentation/</guid>
-      <description>See this awesome presentation  # In the morning___## Getting up- Turn off alarm- Get out of bed___## Breakfast- Eat eggs- Drink coffee---# In the evening___## Dinner- Eat spaghetti- Drink wine___## Going to sleep- Get in bed- Count sheep       function initSlides() { Reveal.initialize({ embedded : true, controls : false, center: true ,	history: false , progress: false , transition: &#34;</description>
     </item>
     
     <item>

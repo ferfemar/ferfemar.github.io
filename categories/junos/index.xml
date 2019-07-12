@@ -13,10 +13,10 @@
     
     <item>
       <title>Junos CLI</title>
-      <link>/junos/cli/</link>
+      <link>/vendors/junos_cli/</link>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/junos/cli/</guid>
+      <guid>/vendors/junos_cli/</guid>
       <description>Junos CLI tricks
 Show only certain prefix length routes The &amp;ldquo;match-prefix&amp;rdquo; command allows for regex filtering
 root@vsrx&amp;gt; show route protocol ospf match-prefix */32 inet.0: 42 destinations, 42 routes (42 active, 0 holddown, 0 hidden) + = Active Route, - = Last Active, * = Both 172.30.5.2/32 *[OSPF/10] 01:31:06, metric 1 &amp;gt; to 172.30.0.2 via ae0.0 172.30.5.3/32 *[OSPF/10] 01:31:06, metric 2 &amp;gt; to 172.30.0.2 via ae0.0 172.30.5.4/32 *[OSPF/10] 00:43:54, metric 3 &amp;gt; to 172.</description>

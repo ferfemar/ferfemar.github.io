@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-12T09:15:09 DST">
-<title>junos :: overloaded bits</title>
+<title>Vendor specifics :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 
     
   </head>
-  <body data-url="/categories/junos/">
+  <body data-url="/vendors/">
     
       <header>
   <div class="logo">
@@ -188,10 +188,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/vendors/" class="dd-item haschildren
+    <li data-nav-id="/vendors/" class="dd-item parent active haschildren
         ">
       <div>
-      <a href="/vendors/">Vendor specifics</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/vendors/">Vendor specifics</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/vendors/iosxe_cli/" class="dd-item">
@@ -236,8 +237,11 @@
    Multicast</option>
     <option value="/netops/" >
    Netops</option>
-    <option value="/vendors/" >
-   Vendor specifics</option>
+    <option value="/vendors/"  selected>
+   Vendor specifics</option> 
+      <option value="/vendors/iosxe_cli/" > IOS-XE CLI</option>
+      <option value="/vendors/junos_cli/" > Junos CLI</option>
+  
 
 
 
@@ -260,51 +264,25 @@
       </div>
     
 
-    <h1>junos</h1>
+    <h1>Vendor specifics</h1>
     
     
     
 
+<p>Vendor specifics notes</p>
 
+<ul class="children children-h2">
 
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
+<span><h2>
+        <a href="/vendors/iosxe_cli/" >IOS-XE CLI</a></h2>
+<p>IOS-XE CLI</p>
+</span>
 
-</div>
-
-
-   <article class="post vendors">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/vendors/junos_cli/">Junos CLI</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Junos CLI tricks
-Show only certain prefix length routes The &ldquo;match-prefix&rdquo; command allows for regex filtering
-root@vsrx&gt; show route protocol ospf match-prefix */32 inet.0: 42 destinations, 42 routes (42 active, 0 holddown, 0 hidden) + = Active Route, - = Last Active, * = Both 172.30.5.2/32 *[OSPF/10] 01:31:06, metric 1 &gt; to 172.30.0.2 via ae0.0 172.30.5.3/32 *[OSPF/10] 01:31:06, metric 2 &gt; to 172.30.0.2 via ae0.0 172.30.5.4/32 *[OSPF/10] 00:43:54, metric 3 &gt; to 172. <a class="read-more" href="/vendors/junos_cli/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
+<span><h2>
+        <a href="/vendors/junos_cli/" >Junos CLI</a></h2>
+<p>Junos CLI</p>
+</span>
+</ul>
 
 
 
@@ -312,7 +290,8 @@ root@vsrx&gt; show route protocol ospf match-prefix */32 inet.0: 42 destinations
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/igps/ospf/" title="OSPF"> <i class="fa fa-chevron-left"></i><label>OSPF</label></a>
+    <a class="nav nav-next" href="/vendors/iosxe_cli/" title="IOS-XE CLI" style="margin-right: 0px;"><label>IOS-XE CLI</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

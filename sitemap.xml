@@ -19,12 +19,7 @@
   </url>
   
   <url>
-    <loc>/ios-xe/</loc>
-    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/ios-xe/cli/</loc>
+    <loc>/vendors/iosxe_cli/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -34,17 +29,17 @@
   </url>
   
   <url>
-    <loc>/junos/</loc>
-    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/junos/cli/</loc>
+    <loc>/vendors/junos_cli/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/igps/ospf/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/vendors/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -210,16 +205,6 @@
   </url>
   
   <url>
-    <loc>/presentations/mypresentation/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/presentations/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/netops/python/python-basics/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
   </url>
@@ -238,18 +223,6 @@
   
   <url>
     <loc>/categories/multicast/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ohyeah/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/presentation/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
