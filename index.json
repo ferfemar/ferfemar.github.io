@@ -14,6 +14,34 @@
 	"content": ""
 },
 {
+	"uri": "/netops/python/",
+	"title": "Python",
+	"tags": [],
+	"description": "",
+	"content": " Python  Working with Excel in Python Working with Excel in Python\n  Python Virtual Enviroments Notes for working with virualenvs\n  Python basics Cheat sheet for absolute basics of Python\n  "
+},
+{
+	"uri": "/netops/python/openpyxl/",
+	"title": "Working with Excel in Python",
+	"tags": [],
+	"description": "Working with Excel in Python",
+	"content": " Working with Excel in Python Import module, create workbook\nfrom openpyxl import Workbook wb = Workbook() Create a sheet\nwb.create_sheet(title=\u0026#39;rtr1\u0026#39;) Get sheet by name\nws1 = wb[\u0026#39;rtr1\u0026#39;] Delete a sheet\ndel wb[\u0026#39;Sheet\u0026#39;] Display list of sheetnames\nwb.sheetnames Access a cell in a sheet\ncell = ws1[\u0026#39;A1\u0026#39;] Save workbook to a file\nwb.save(filename=\u0026#39;vrftestreport.xlsx\u0026#39;) Sources and references\nhttp://www.pythonexcel.com/ https://openpyxl.readthedocs.io/en/stable/usage.html\n"
+},
+{
+	"uri": "/categories/openpyxl/",
+	"title": "openpyxl",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/python/",
+	"title": "python",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/netops/git/",
 	"title": "GIT",
 	"tags": [],
@@ -126,25 +154,11 @@
 	"content": ""
 },
 {
-	"uri": "/netops/python/",
-	"title": "Python",
-	"tags": [],
-	"description": "",
-	"content": " Python  Python Virtual Enviroments Notes for working with virualenvs\n  Python basics Cheat sheet for absolute basics of Python\n  "
-},
-{
 	"uri": "/netops/python/python-virtualenvs/",
 	"title": "Python Virtual Enviroments",
 	"tags": [],
 	"description": "Notes for working with virualenvs",
 	"content": "Using mkvirtualenv w/ Python 3\nmkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  "
-},
-{
-	"uri": "/categories/python/",
-	"title": "python",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "/categories/virtualenv/",
@@ -312,7 +326,7 @@
 	"title": "Netops",
 	"tags": [],
 	"description": "",
-	"content": " Netops  GIT  GIT Git Panic Commands What to do when you screw up in GIT   Python  Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   Ansible  Ansible Ansible for Junos basics Basics of using Ansible to manage Juniper devices Ansible timestamps Working with timestamps in Ansible   "
+	"content": " Netops  Python  Python Working with Excel in Python Working with Excel in Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   GIT  GIT Git Panic Commands What to do when you screw up in GIT   Ansible  Ansible Ansible for Junos basics Basics of using Ansible to manage Juniper devices Ansible timestamps Working with timestamps in Ansible   "
 },
 {
 	"uri": "/tags/",

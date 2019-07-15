@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-15T13:19:13 DST">
-<title>Junos CLI :: overloaded bits</title>
+<meta name="revised" content="2019-07-15T13:19:12 DST">
+<title>openpyxl :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="Junos CLI">
+<meta name="description" content="">
 
 
 
     
   </head>
-  <body data-url="/vendors/junos_cli/">
+  <body data-url="/categories/openpyxl/">
     
       <header>
   <div class="logo">
@@ -210,11 +210,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/vendors/" class="dd-item parent haschildren
+    <li data-nav-id="/vendors/" class="dd-item haschildren
         ">
       <div>
-      <a href="/vendors/">Vendor specifics</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/vendors/">Vendor specifics</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/vendors/iosxe_cli/" class="dd-item">
@@ -224,7 +223,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/vendors/junos_cli/" class="dd-item active">
+      <li data-nav-id="/vendors/junos_cli/" class="dd-item">
         <div>
           <a href="/vendors/junos_cli/">
             Junos CLI
@@ -260,10 +259,7 @@
     <option value="/netops/" >
    Netops</option>
     <option value="/vendors/" >
-   Vendor specifics</option> 
-      <option value="/vendors/iosxe_cli/" > IOS-XE CLI</option>
-      <option value="/vendors/junos_cli/"  selected> Junos CLI</option>
-  
+   Vendor specifics</option>
 
 
 
@@ -286,52 +282,65 @@
       </div>
     
 
-    <h1>Junos CLI</h1>
-    
+    <h1>openpyxl</h1>
     
     
     
 
-<p>Junos CLI tricks</p>
 
-<h2 id="show-only-certain-prefix-length-routes">Show only certain prefix length routes</h2>
 
-<p>The &ldquo;match-prefix&rdquo; command allows for regex filtering</p>
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
 
-<pre><code>root@vsrx&gt; show route protocol ospf match-prefix */32                
-                                                                    
-inet.0: 42 destinations, 42 routes (42 active, 0 holddown, 0 hidden)
-+ = Active Route, - = Last Active, * = Both                         
-                                                                    
-172.30.5.2/32      *[OSPF/10] 01:31:06, metric 1                    
-                    &gt; to 172.30.0.2 via ae0.0                       
-172.30.5.3/32      *[OSPF/10] 01:31:06, metric 2                    
-                    &gt; to 172.30.0.2 via ae0.0                       
-172.30.5.4/32      *[OSPF/10] 00:43:54, metric 3                    
-                    &gt; to 172.30.0.2 via ae0.0                       
-172.30.5.5/32      *[OSPF/10] 01:31:06, metric 4                    
-                    &gt; to 172.30.0.2 via ae0.0                       
-172.30.5.6/32      *[OSPF/10] 01:31:06, metric 3                    
-                    &gt; to 172.30.0.2 via ae0.0                       
-172.30.5.7/32      *[OSPF/10] 01:31:06, metric 2                    
-                    &gt; to 172.30.0.2 via ae0.0                       
-172.30.5.8/32      *[OSPF/10] 03:34:28, metric 1                    
-                    &gt; to 172.30.0.10 via ge-0/0/4.118               
-224.0.0.5/32       *[OSPF/10] 03:50:19, metric 1                    
-                      MultiRecv                                     
-                                                                    
-inet6.0: 5 destinations, 6 routes (5 active, 0 holddown, 0 hidden)  
-                                                                    
-root@vsrx&gt;                                                           
-</code></pre>
+</div>
+
+
+   <article class="post netops">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/netops/python/openpyxl/">Working with Excel in Python</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Working with Excel in Python Import module, create workbook
+from openpyxl import Workbook wb = Workbook() Create a sheet
+wb.create_sheet(title=&#39;rtr1&#39;) Get sheet by name
+ws1 = wb[&#39;rtr1&#39;] Delete a sheet
+del wb[&#39;Sheet&#39;] Display list of sheetnames
+wb.sheetnames Access a cell in a sheet
+cell = ws1[&#39;A1&#39;] Save workbook to a file
+wb.save(filename=&#39;vrftestreport.xlsx&#39;) Sources and references
+http://www.pythonexcel.com/ https://openpyxl.readthedocs.io/en/stable/usage.html <a class="read-more" href="/netops/python/openpyxl/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/vendors/iosxe_cli/" title="IOS-XE CLI"> <i class="fa fa-chevron-left"></i><label>IOS-XE CLI</label></a>
-    <a class="nav nav-next" href="/ipspace-course-notes/" title="Building Network Automation Solutions Course Notes" style="margin-right: 0px;"><label>Building Network Automation Solutions Course Notes</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -346,7 +355,7 @@ root@vsrx&gt;
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+        <i class='fa fa-calendar'></i> Last update on 15/07/2019
     </div>
     
 

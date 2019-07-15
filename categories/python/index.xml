@@ -6,10 +6,27 @@
     <description>Recent content in python on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Working with Excel in Python</title>
+      <link>/netops/python/openpyxl/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/python/openpyxl/</guid>
+      <description>Working with Excel in Python Import module, create workbook
+from openpyxl import Workbook wb = Workbook() Create a sheet
+wb.create_sheet(title=&amp;#39;rtr1&amp;#39;) Get sheet by name
+ws1 = wb[&amp;#39;rtr1&amp;#39;] Delete a sheet
+del wb[&amp;#39;Sheet&amp;#39;] Display list of sheetnames
+wb.sheetnames Access a cell in a sheet
+cell = ws1[&amp;#39;A1&amp;#39;] Save workbook to a file
+wb.save(filename=&amp;#39;vrftestreport.xlsx&amp;#39;) Sources and references
+http://www.pythonexcel.com/ https://openpyxl.readthedocs.io/en/stable/usage.html</description>
+    </item>
     
     <item>
       <title>Python Virtual Enviroments</title>

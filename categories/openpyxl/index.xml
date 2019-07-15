@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on overloaded bits</title>
-    <link>/netops/python/</link>
-    <description>Recent content in Python on overloaded bits</description>
+    <title>openpyxl on overloaded bits</title>
+    <link>/categories/openpyxl/</link>
+    <description>Recent content in openpyxl on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/netops/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/openpyxl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -26,25 +26,6 @@ wb.sheetnames Access a cell in a sheet
 cell = ws1[&amp;#39;A1&amp;#39;] Save workbook to a file
 wb.save(filename=&amp;#39;vrftestreport.xlsx&amp;#39;) Sources and references
 http://www.pythonexcel.com/ https://openpyxl.readthedocs.io/en/stable/usage.html</description>
-    </item>
-    
-    <item>
-      <title>Python Virtual Enviroments</title>
-      <link>/netops/python/python-virtualenvs/</link>
-      <pubDate>Mon, 20 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/netops/python/python-virtualenvs/</guid>
-      <description>Using mkvirtualenv w/ Python 3
-mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  </description>
-    </item>
-    
-    <item>
-      <title>Python basics</title>
-      <link>/netops/python/python-basics/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/netops/python/python-basics/</guid>
-      <description> test </description>
     </item>
     
   </channel>

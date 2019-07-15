@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-12T09:23:25 DST">
+<meta name="revised" content="2019-07-15T13:19:12 DST">
 <title>python :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -199,6 +199,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/netops/python/openpyxl/" class="dd-item">
+        <div>
+          <a href="/netops/python/openpyxl/">
+            Working with Excel in Python
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
         </ul>
@@ -294,6 +301,31 @@
 
    <article class="post netops">
     <header class="post-header">
+        <h2 class="post-title"><a href="/netops/python/openpyxl/">Working with Excel in Python</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Working with Excel in Python Import module, create workbook
+from openpyxl import Workbook wb = Workbook() Create a sheet
+wb.create_sheet(title=&#39;rtr1&#39;) Get sheet by name
+ws1 = wb[&#39;rtr1&#39;] Delete a sheet
+del wb[&#39;Sheet&#39;] Display list of sheetnames
+wb.sheetnames Access a cell in a sheet
+cell = ws1[&#39;A1&#39;] Save workbook to a file
+wb.save(filename=&#39;vrftestreport.xlsx&#39;) Sources and references
+http://www.pythonexcel.com/ https://openpyxl.readthedocs.io/en/stable/usage.html <a class="read-more" href="/netops/python/openpyxl/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post netops">
+    <header class="post-header">
         <h2 class="post-title"><a href="/netops/python/python-virtualenvs/">Python Virtual Enviroments</a></h2>
     </header>
     <section class="post-excerpt">
@@ -358,7 +390,7 @@ mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment   <a class="read-more" 
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 20/05/2019
+        <i class='fa fa-calendar'></i> Last update on 15/07/2019
     </div>
     
 
