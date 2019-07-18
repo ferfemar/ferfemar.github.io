@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-15T13:19:12 DST">
+<meta name="revised" content="2019-07-18T13:19:28 DST">
 <title>netops :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -301,6 +301,27 @@
 
    <article class="post netops">
     <header class="post-header">
+        <h2 class="post-title"><a href="/netops/ansible/working-with-timestamp/">Ansible timestamps</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Timestamps in Ansible Using facts (gather_facts cannot be False):
+ tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:
+- hosts: all tasks: - debug: msg=&quot;{{ lookup('pipe','date') }}&quot;  or rather formatted:
+- hosts: all tasks: - debug: msg=&quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}  Reference of other facts:
+&quot;date&quot;: &quot;2017-07-27&quot;, &quot;day&quot;: &quot;27&quot;, &quot;epoch&quot;: &quot;1501173540&quot;, &quot;hour&quot;: &quot;22&quot;, &quot;iso8601&quot;: &quot;2017-07-27T16:39:00Z&quot;, &quot;iso8601_basic&quot;: &quot;20170727T220900129160&quot;, &quot;iso8601_basic_short&quot;: &quot;20170727T220900&quot;, &quot;iso8601_micro&quot;: &quot;2017-07-27T16:39:00.129240Z&quot;, &quot;minute&quot;: &quot;09&quot;, &quot;month&quot;: &quot;07&quot;, &quot;second&quot;: &quot;00&quot;, &quot;time&quot;: &quot;22:09:00&quot;, &quot;tz&quot;: &quot;IST&quot;, &quot;tz_offset&quot;: &quot;+0530&quot;, &quot;weekday&quot;: &quot;Thursday&quot;, &quot;weekday_number&quot;: &quot;4&quot;, &quot;weeknumber&quot;: &quot;30&quot;, &quot;year&quot;: &quot;2017&quot;  Sources and References http://www. <a class="read-more" href="/netops/ansible/working-with-timestamp/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post netops">
+    <header class="post-header">
         <h2 class="post-title"><a href="/netops/git/panic_buttons/">Git Panic Commands</a></h2>
     </header>
     <section class="post-excerpt">
@@ -342,23 +363,6 @@ mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment   <a class="read-more" 
     </header>
     <section class="post-excerpt">
         <p> test  <a class="read-more" href="/netops/ansible/ansible-w-junos/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-   <article class="post netops">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/netops/ansible/working-with-timestamp/">Ansible timestamps</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> test Danger !   <a class="read-more" href="/netops/ansible/working-with-timestamp/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -418,7 +422,7 @@ mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment   <a class="read-more" 
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 12/07/2019
+        <i class='fa fa-calendar'></i> Last update on 18/07/2019
     </div>
     
 

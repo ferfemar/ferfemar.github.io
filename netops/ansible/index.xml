@@ -6,10 +6,23 @@
     <description>Recent content in Ansible on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2012 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/netops/ansible/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible timestamps</title>
+      <link>/netops/ansible/working-with-timestamp/</link>
+      <pubDate>Thu, 18 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/working-with-timestamp/</guid>
+      <description>Timestamps in Ansible Using facts (gather_facts cannot be False):
+ tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:
+- hosts: all tasks: - debug: msg=&amp;quot;{{ lookup(&#39;pipe&#39;,&#39;date&#39;) }}&amp;quot;  or rather formatted:
+- hosts: all tasks: - debug: msg=&amp;quot;{{ lookup(&#39;pipe&#39;,&#39;date +%Y-%m-%d-%H-%M-%S&#39;) }}  Reference of other facts:
+&amp;quot;date&amp;quot;: &amp;quot;2017-07-27&amp;quot;, &amp;quot;day&amp;quot;: &amp;quot;27&amp;quot;, &amp;quot;epoch&amp;quot;: &amp;quot;1501173540&amp;quot;, &amp;quot;hour&amp;quot;: &amp;quot;22&amp;quot;, &amp;quot;iso8601&amp;quot;: &amp;quot;2017-07-27T16:39:00Z&amp;quot;, &amp;quot;iso8601_basic&amp;quot;: &amp;quot;20170727T220900129160&amp;quot;, &amp;quot;iso8601_basic_short&amp;quot;: &amp;quot;20170727T220900&amp;quot;, &amp;quot;iso8601_micro&amp;quot;: &amp;quot;2017-07-27T16:39:00.129240Z&amp;quot;, &amp;quot;minute&amp;quot;: &amp;quot;09&amp;quot;, &amp;quot;month&amp;quot;: &amp;quot;07&amp;quot;, &amp;quot;second&amp;quot;: &amp;quot;00&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;22:09:00&amp;quot;, &amp;quot;tz&amp;quot;: &amp;quot;IST&amp;quot;, &amp;quot;tz_offset&amp;quot;: &amp;quot;+0530&amp;quot;, &amp;quot;weekday&amp;quot;: &amp;quot;Thursday&amp;quot;, &amp;quot;weekday_number&amp;quot;: &amp;quot;4&amp;quot;, &amp;quot;weeknumber&amp;quot;: &amp;quot;30&amp;quot;, &amp;quot;year&amp;quot;: &amp;quot;2017&amp;quot;  Sources and References http://www.</description>
+    </item>
     
     <item>
       <title>Ansible for Junos basics</title>
@@ -18,15 +31,6 @@
       
       <guid>/netops/ansible/ansible-w-junos/</guid>
       <description> test </description>
-    </item>
-    
-    <item>
-      <title>Ansible timestamps</title>
-      <link>/netops/ansible/working-with-timestamp/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/netops/ansible/working-with-timestamp/</guid>
-      <description> test Danger !  </description>
     </item>
     
   </channel>

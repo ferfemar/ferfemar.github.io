@@ -7,8 +7,36 @@
 	"content": " Overloaded bits "
 },
 {
+	"uri": "/netops/ansible/",
+	"title": "Ansible",
+	"tags": [],
+	"description": "",
+	"content": " Ansible  Ansible timestamps Working with timestamps in Ansible\n  Ansible for Junos basics Basics of using Ansible to manage Juniper devices\n  "
+},
+{
+	"uri": "/netops/ansible/working-with-timestamp/",
+	"title": "Ansible timestamps",
+	"tags": [],
+	"description": "Working with timestamps in Ansible",
+	"content": " Timestamps in Ansible Using facts (gather_facts cannot be False):\n tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:\n- hosts: all tasks: - debug: msg=\u0026quot;{{ lookup('pipe','date') }}\u0026quot;  or rather formatted:\n- hosts: all tasks: - debug: msg=\u0026quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}  Reference of other facts:\n\u0026quot;date\u0026quot;: \u0026quot;2017-07-27\u0026quot;, \u0026quot;day\u0026quot;: \u0026quot;27\u0026quot;, \u0026quot;epoch\u0026quot;: \u0026quot;1501173540\u0026quot;, \u0026quot;hour\u0026quot;: \u0026quot;22\u0026quot;, \u0026quot;iso8601\u0026quot;: \u0026quot;2017-07-27T16:39:00Z\u0026quot;, \u0026quot;iso8601_basic\u0026quot;: \u0026quot;20170727T220900129160\u0026quot;, \u0026quot;iso8601_basic_short\u0026quot;: \u0026quot;20170727T220900\u0026quot;, \u0026quot;iso8601_micro\u0026quot;: \u0026quot;2017-07-27T16:39:00.129240Z\u0026quot;, \u0026quot;minute\u0026quot;: \u0026quot;09\u0026quot;, \u0026quot;month\u0026quot;: \u0026quot;07\u0026quot;, \u0026quot;second\u0026quot;: \u0026quot;00\u0026quot;, \u0026quot;time\u0026quot;: \u0026quot;22:09:00\u0026quot;, \u0026quot;tz\u0026quot;: \u0026quot;IST\u0026quot;, \u0026quot;tz_offset\u0026quot;: \u0026quot;+0530\u0026quot;, \u0026quot;weekday\u0026quot;: \u0026quot;Thursday\u0026quot;, \u0026quot;weekday_number\u0026quot;: \u0026quot;4\u0026quot;, \u0026quot;weeknumber\u0026quot;: \u0026quot;30\u0026quot;, \u0026quot;year\u0026quot;: \u0026quot;2017\u0026quot;  Sources and References http://www.mydailytutorials.com/working-date-timestamp-ansible/\n"
+},
+{
 	"uri": "/categories/",
 	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/ansible/",
+	"title": "ansible",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/netops/",
+	"title": "netops",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -58,13 +86,6 @@
 {
 	"uri": "/categories/git/",
 	"title": "git",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/categories/netops/",
-	"title": "netops",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -259,25 +280,11 @@
 	"content": ""
 },
 {
-	"uri": "/netops/ansible/",
-	"title": "Ansible",
-	"tags": [],
-	"description": "",
-	"content": " Ansible  Ansible for Junos basics Basics of using Ansible to manage Juniper devices\n  Ansible timestamps Working with timestamps in Ansible\n  "
-},
-{
 	"uri": "/netops/ansible/ansible-w-junos/",
 	"title": "Ansible for Junos basics",
 	"tags": [],
 	"description": "Basics of using Ansible to manage Juniper devices",
 	"content": " test "
-},
-{
-	"uri": "/netops/ansible/working-with-timestamp/",
-	"title": "Ansible timestamps",
-	"tags": [],
-	"description": "Working with timestamps in Ansible",
-	"content": " test Danger !  "
 },
 {
 	"uri": "/multicast/igmp/",
@@ -301,13 +308,6 @@
 	"content": " test "
 },
 {
-	"uri": "/categories/ansible/",
-	"title": "ansible",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "/categories/igmp/",
 	"title": "igmp",
 	"tags": [],
@@ -326,7 +326,7 @@
 	"title": "Netops",
 	"tags": [],
 	"description": "",
-	"content": " Netops  Python  Python Working with Excel in Python Working with Excel in Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   GIT  GIT Git Panic Commands What to do when you screw up in GIT   Ansible  Ansible Ansible for Junos basics Basics of using Ansible to manage Juniper devices Ansible timestamps Working with timestamps in Ansible   "
+	"content": " Netops  Ansible  Ansible Ansible timestamps Working with timestamps in Ansible Ansible for Junos basics Basics of using Ansible to manage Juniper devices   Python  Python Working with Excel in Python Working with Excel in Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   GIT  GIT Git Panic Commands What to do when you screw up in GIT   "
 },
 {
 	"uri": "/tags/",

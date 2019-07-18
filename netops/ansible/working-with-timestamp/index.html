@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-15T13:19:13 DST">
+<meta name="revised" content="2019-07-18T13:19:28 DST">
 <title>Ansible timestamps :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -300,21 +300,62 @@
     
     
 
-<h1 id="test">test</h1>
+<h1 id="timestamps-in-ansible">Timestamps in Ansible</h1>
 
+<p>Using facts (gather_facts cannot be False):</p>
 
+<pre><code>  tasks:
+  - name: Ansible date fact example
+    debug:
+      var=ansible_date_time.date
+</code></pre>
 
-<button class="btn  btn-default" type="button"  onclick="location.href='https:\/\/google.com'" > Danger ! </button>
+<p>Using local time via lookup:</p>
 
+<pre><code>- hosts: all
+  tasks:
+    - debug: msg=&quot;{{ lookup('pipe','date') }}&quot;
+</code></pre>
 
+<p>or rather formatted:</p>
 
+<pre><code>- hosts: all
+  tasks:
+    - debug: msg=&quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}
+</code></pre>
+
+<p>Reference of other facts:</p>
+
+<pre><code>&quot;date&quot;: &quot;2017-07-27&quot;,
+&quot;day&quot;: &quot;27&quot;,
+&quot;epoch&quot;: &quot;1501173540&quot;,
+&quot;hour&quot;: &quot;22&quot;,
+&quot;iso8601&quot;: &quot;2017-07-27T16:39:00Z&quot;,
+&quot;iso8601_basic&quot;: &quot;20170727T220900129160&quot;,
+&quot;iso8601_basic_short&quot;: &quot;20170727T220900&quot;,
+&quot;iso8601_micro&quot;: &quot;2017-07-27T16:39:00.129240Z&quot;,
+&quot;minute&quot;: &quot;09&quot;,
+&quot;month&quot;: &quot;07&quot;,
+&quot;second&quot;: &quot;00&quot;,
+&quot;time&quot;: &quot;22:09:00&quot;,
+&quot;tz&quot;: &quot;IST&quot;,
+&quot;tz_offset&quot;: &quot;+0530&quot;,
+&quot;weekday&quot;: &quot;Thursday&quot;,
+&quot;weekday_number&quot;: &quot;4&quot;,
+&quot;weeknumber&quot;: &quot;30&quot;,
+&quot;year&quot;: &quot;2017&quot;
+</code></pre>
+
+<h1 id="sources-and-references">Sources and References</h1>
+
+<p><a href="http://www.mydailytutorials.com/working-date-timestamp-ansible/">http://www.mydailytutorials.com/working-date-timestamp-ansible/</a></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/netops/ansible/ansible-w-junos/" title="Ansible for Junos basics"> <i class="fa fa-chevron-left"></i><label>Ansible for Junos basics</label></a>
+<a class="nav nav-prev" href="/netops/ansible/" title="Ansible"> <i class="fa fa-chevron-left"></i><label>Ansible</label></a>
     <a class="nav nav-next" href="/netops/ansible/ansible-w-junos/" title="Ansible for Junos basics" style="margin-right: 0px;"><label>Ansible for Junos basics</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
@@ -330,7 +371,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 06/04/2012
+        <i class='fa fa-calendar'></i> Last update on 18/07/2019
     </div>
     
 
