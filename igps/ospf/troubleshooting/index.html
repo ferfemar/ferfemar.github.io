@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-23T20:04:12 DST">
-<title>404 Page not found :: overloaded bits</title>
+<title>OSPF troubleshooting :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="OSPF troubleshooting">
 
 
 
     
   </head>
-  <body data-url="/404.html">
+  <body data-url="/igps/ospf/troubleshooting/">
     
       <header>
   <div class="logo">
@@ -84,10 +84,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/" class="dd-item haschildren
+    <li data-nav-id="/igps/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/">IGPs</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/igps/isis/" class="dd-item haschildren
@@ -105,10 +106,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/ospf/" class="dd-item haschildren
+    <li data-nav-id="/igps/ospf/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/igps/ospf/">OSPF</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/ospf/">OSPF</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/igps/ospf/adj_formation/" class="dd-item">
@@ -118,7 +120,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/igps/ospf/troubleshooting/" class="dd-item">
+      <li data-nav-id="/igps/ospf/troubleshooting/" class="dd-item active">
         <div>
           <a href="/igps/ospf/troubleshooting/">
             OSPF troubleshooting
@@ -274,7 +276,14 @@
     <option value="/certs/" >
    Certifications</option>
     <option value="/igps/" >
-   IGPs</option>
+   IGPs</option> 
+    <option value="/igps/isis/" >
+   ISIS</option>
+    <option value="/igps/ospf/" >
+   OSPF</option> 
+      <option value="/netops/git/panic_buttons/" > Git Panic Commands</option>
+  
+  
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
@@ -305,21 +314,141 @@
       </div>
     
 
-    <h1>404 Page not found</h1>
+    <h1>OSPF troubleshooting</h1>
     
     
-	<h1>Error</h1>
-	<p>
-	</p>
-	<p>Woops. Looks like this page doesn&#39;t exist.</p>
-	<p></p>
-	<p><a href="/">Go to homepage</a></p>
-	<p><img src="/images/gopher-404.jpg" style="width:50%"></img></p>    
+    
+    
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="neighborship-problems-checklist">Neighborship problems checklist</h3>
+
+<p>Source: <a href="https://www.inetzero.com/what-is-your-ospf-neighbor-doing-adjancency-problems-in-ospf/">iNET ZERO</a></p>
+
+<ol>
+<li>Interfaces present in [edit protocols ospf]</li>
+<li>Interfaces are not passive</li>
+<li>Interfaces are not down</li>
+<li>No FF is blocking OSPF protocol 89</li>
+<li>Area mismatch</li>
+<li>Timer mismatch</li>
+<li>Auth. mismatch</li>
+<li>Area type mismatch</li>
+<li>Subnet mask mismatch</li>
+<li>Duplicate router-id</li>
+<li>MTU mismatch</li>
+<li>DR priority = 0 on both routers</li>
+<li>Duplicate interface ip address</li>
+<li>Interface type mismatch</li>
+</ol>
+
+<h3 id="tools">Tools</h3>
+
+<p>Show commands.
+Traceoptions.
+Monitor traffic interface.</p>
+
+<pre><code>monitor traffic interface em1 size 1500 no-resolve detail | matching “ip proto ospf”
+</code></pre>
+
+<h3 id="authentication-debugs">Authentication debugs</h3>
+
+<p>Authentication problem is best identified using traceoptions:</p>
+
+<pre><code>[edit protocols ospf traceoptions]
+root@vrsx# show
+file debugospf size 10m;
+flag hello detail;
+flag error detail;
+
+[edit protocols ospf traceoptions]
+root@vsrx#
+</code></pre>
+
+<p>The message for mismatched authentication looks like this:</p>
+
+<pre><code>Jul 10 19:14:59.687339 OSPF packet ignored: authentication failure (bad cksum).
+Jul 10 19:14:59.688689 OSPF packet ignored: authentication failure from 172.30.0.26
+</code></pre>
+
+<p>Message when the other side doesn&rsquo;t use authentication, but it is required:</p>
+
+<pre><code>Jul 10 19:23:40.327021 OSPF packet ignored: authentication type mismatch (0) from 172.30.0.26
+</code></pre>
+
+<p>Succesful negotiation after fixing the issue looks like this:</p>
+
+<pre><code>Jul 10 19:25:11.714647 OSPF rcvd Hello 172.30.0.26 -&gt; 224.0.0.5 (ge-0/0/4.136 IFL 74 area 0.0.0.0)
+Jul 10 19:25:11.714695   Version 2, length 44, ID 172.30.5.6, area 0.0.0.0
+Jul 10 19:25:11.714738   checksum 0x0, authtype 2
+Jul 10 19:25:11.714782   mask 255.255.255.252, hello_ivl 10, opts 0x12, prio 128
+Jul 10 19:25:11.714825   dead_ivl 40, DR 172.30.0.26, BDR 0.0.0.0
+Jul 10 19:25:11.714870 OSPF restart signaling: Received hello with LLS data from nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.714923 OSPF restart signaling: Received hello with LR bit set from nbr ip=172.30.0.26 id=172.30.5.6. Set oob-resync capabilty 1.
+Jul 10 19:25:11.715291 OSPF restart signaling: set L bit in hellos sent on interface ge-0/0/4.136.
+Jul 10 19:25:11.715338 OSPF sent Hello 172.30.0.25 -&gt; 224.0.0.5 (ge-0/0/4.136 IFL 74 area 0.0.0.0)
+Jul 10 19:25:11.715381   Version 2, length 48, ID 172.30.5.3, area 0.0.0.0
+Jul 10 19:25:11.715425   mask 255.255.255.252, hello_ivl 10, opts 0x12, prio 128
+Jul 10 19:25:11.715467   dead_ivl 40, DR 172.30.0.25, BDR 0.0.0.0
+Jul 10 19:25:11.715510 OSPF restart signaling: Add LLS data for Hello packet on interface ge-0/0/4.136.
+Jul 10 19:25:11.716654 OSPF rcvd Hello 172.30.0.26 -&gt; 224.0.0.5 (ge-0/0/4.136 IFL 74 area 0.0.0.0)
+Jul 10 19:25:11.716699   Version 2, length 44, ID 172.30.5.6, area 0.0.0.0
+Jul 10 19:25:11.716742   checksum 0x0, authtype 2
+Jul 10 19:25:11.720641   mask 255.255.255.252, hello_ivl 10, opts 0x12, prio 128
+Jul 10 19:25:11.720697   dead_ivl 40, DR 172.30.0.26, BDR 0.0.0.0
+Jul 10 19:25:11.720742 OSPF restart signaling: Received hello with LLS data from nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.720786 OSPF restart signaling: Received hello with LR bit set from nbr ip=172.30.0.26 id=172.30.5.6. Set oob-resync capabilty 1.
+Jul 10 19:25:11.748618 OSPF rcvd Hello 172.30.0.26 -&gt; 224.0.0.5 (ge-0/0/4.136 IFL 74 area 0.0.0.0)
+Jul 10 19:25:11.748673   Version 2, length 48, ID 172.30.5.6, area 0.0.0.0
+Jul 10 19:25:11.748730   checksum 0x0, authtype 2
+Jul 10 19:25:11.748774   mask 255.255.255.252, hello_ivl 10, opts 0x12, prio 128
+Jul 10 19:25:11.748817   dead_ivl 40, DR 172.30.0.26, BDR 0.0.0.0
+Jul 10 19:25:11.748866 OSPF restart signaling: Received hello with LLS data from nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.748912 OSPF restart signaling: Received hello with LR bit set from nbr ip=172.30.0.26 id=172.30.5.6. Set oob-resync capabilty 1.
+Jul 10 19:25:11.749027 RPD_OSPF_NBRUP: OSPF neighbor 172.30.0.26 (realm ospf-v2 ge-0/0/4.136 area 0.0.0.0) state changed from Init to ExStart due to 2WayRcvd (event reason: neighbor detected this router)
+Jul 10 19:25:11.749117 OSPF restart signaling: Send DBD with LR bit on to nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.749216 OSPF restart signaling: Add LLS data for DbD packet on interface ge-0/0/4.136.
+Jul 10 19:25:11.756076 OSPF DR is 172.30.5.6, BDR is 172.30.5.3
+Jul 10 19:25:11.756757 OSPF hello from 172.30.0.26 (IFL 74, area 0.0.0.0) absorbed
+Jul 10 19:25:11.762080 OSPF restart signaling: set L bit in hellos sent on interface ge-0/0/4.136.
+Jul 10 19:25:11.762768 OSPF sent Hello 172.30.0.25 -&gt; 224.0.0.5 (ge-0/0/4.136 IFL 74 area 0.0.0.0)
+Jul 10 19:25:11.763076   Version 2, length 48, ID 172.30.5.3, area 0.0.0.0
+Jul 10 19:25:11.763152   mask 255.255.255.252, hello_ivl 10, opts 0x12, prio 128
+Jul 10 19:25:11.763225   dead_ivl 40, DR 172.30.0.26, BDR 172.30.0.25
+Jul 10 19:25:11.763303 OSPF restart signaling: Add LLS data for Hello packet on interface ge-0/0/4.136.
+Jul 10 19:25:11.763893 OSPF restart signaling: Received DBD with LLS data from nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.764106 OSPF restart signaling: Send DBD with LR bit on to nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.802212 OSPF restart signaling: Add LLS data for DbD packet on interface ge-0/0/4.136.
+Jul 10 19:25:11.821028 OSPF rcvd Hello 172.30.0.26 -&gt; 224.0.0.5 (ge-0/0/4.136 IFL 74 area 0.0.0.0)
+Jul 10 19:25:11.821083   Version 2, length 48, ID 172.30.5.6, area 0.0.0.0
+Jul 10 19:25:11.821124   checksum 0x0, authtype 2
+Jul 10 19:25:11.821217   mask 255.255.255.252, hello_ivl 10, opts 0x12, prio 128
+Jul 10 19:25:11.821269   dead_ivl 40, DR 172.30.0.26, BDR 172.30.0.25
+Jul 10 19:25:11.821390 OSPF restart signaling: Received hello with LLS data from nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.821436 OSPF restart signaling: Received hello with LR bit set from nbr ip=172.30.0.26 id=172.30.5.6. Set oob-resync capabilty 1.
+Jul 10 19:25:11.823745 OSPF restart signaling: Received DBD with LLS data from nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.823806 OSPF restart signaling: Send DBD with LR bit on to nbr ip=172.30.0.26 id=172.30.5.6.
+Jul 10 19:25:11.858401 OSPF restart signaling: Add LLS data for DbD packet on interface ge-0/0/4.136.
+Jul 10 19:25:11.882496 RPD_OSPF_NBRUP: OSPF neighbor 172.30.0.26 (realm ospf-v2 ge-0/0/4.136 area 0.0.0.0) state changed from Loading to Full due to LoadDone (event reason: OSPF loading completed)
+Jul 10 19:25:12.266533 OSPF periodic xmit from 172.30.0.21 to 224.0.0.5 (IFL 73 area 0.0.0.4)
+Jul 10 19:25:14.533324 OSPF hello from 172.30.0.22 (IFL 73, area 0.0.0.4) absorbed
+Jul 10 19:25:18.489407 OSPF hello from 172.30.0.13 (IFL 72, area 0.0.0.0) absorbed
+Jul 10 19:25:19.197534 OSPF periodic xmit from 172.30.0.14 to 224.0.0.5 (IFL 72 area 0.0.0.0)
+Jul 10 19:25:19.826699 OSPF hello from 172.30.0.26 (IFL 74, area 0.0.0.0) absorbed
+</code></pre>
+
+<h2 id="resources">Resources</h2>
+
+<p><a href="https://www.inetzero.com/what-is-your-ospf-neighbor-doing-adjancency-problems-in-ospf/">iNET ZERO</a></p>
+
+
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/vendors/" title="Vendor specifics" style="margin-right: 0px;"><label>Vendor specifics</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/igps/ospf/adj_formation/" title="OSPF adj. formation notes"> <i class="fa fa-chevron-left"></i><label>OSPF adj. formation notes</label></a>
+    <a class="nav nav-next" href="/netops/" title="Netops" style="margin-right: 0px;"><label>Netops</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -332,6 +461,10 @@
 
     
 
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+    </div>
     
 
     
@@ -368,5 +501,3 @@
     
   </body>
 </html>
-
-

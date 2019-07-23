@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-18T13:19:28 DST">
+<meta name="revised" content="2019-07-23T20:04:12 DST">
 <title>isis :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -90,19 +90,42 @@
       <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/igps/isis/" class="dd-item">
+    <li data-nav-id="/igps/isis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/igps/isis/">ISIS</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/igps/isis/isis/" class="dd-item">
         <div>
-          <a href="/igps/isis/">
-            IS-IS
+          <a href="/igps/isis/isis/">
+            Integrated IS-IS notes
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/igps/ospf/" class="dd-item">
+        </ul>
+    </li>
+    <li data-nav-id="/igps/ospf/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/igps/ospf/">OSPF</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/igps/ospf/adj_formation/" class="dd-item">
         <div>
-          <a href="/igps/ospf/">
-            OSPF
+          <a href="/igps/ospf/adj_formation/">
+            OSPF adj. formation notes
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
+    </li>
+      <li data-nav-id="/igps/ospf/troubleshooting/" class="dd-item">
+        <div>
+          <a href="/igps/ospf/troubleshooting/">
+            OSPF troubleshooting
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -301,11 +324,10 @@
 
    <article class="post igps">
     <header class="post-header">
-        <h2 class="post-title"><a href="/igps/isis/">IS-IS</a></h2>
+        <h2 class="post-title"><a href="/igps/isis/isis/">Integrated IS-IS notes</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Integrated IS-IS
-Basics  originaly ISO protocol RFC 1195 defined for (also) routing TCP/IP SPF algoritm / Dijkstra  ISO Adressing  Address consists of: IDP + DSP  IDP = Initial Domain Part  part standardized by ISO, specifies format &amp; addressing authority for DSP part  DSP = Domain Specific Part  HO-DSP (High Order part of DSL) ID (system identifier) SEL (NSAP selector)   IDP+HO-DSP can be called area address  for transition purposes there might be multiple area addresses in one area area address in OSI addressing allows l1 routers to identify packets to destinations outside their area   ISO Areas  Level 1 and Level 2 areas Level 1  L1 routers know the topology inside their area; they do not know the identity of routers outside their area L1 routers forward all traffic for destinations outside their area to level 2 router in their area L1 routers within an area, based on ID portion of the ISO address L1 routers examine the ISO address, if within their own area then they route towards destination, if not they ship the packet to nearest L2 router L1 router will become neighbor only with routers in the SAME area  Level 2  L2 routers in Level 2 area do not need to know the topology of level 1 areas as well L2 routers route based on area address (IDP+HO-DSP), they route towards areas (without regard to the internal structure of the area) L2 router will become neighbor with another L2 router REGARDLESS of area address  only L2 LSPs will flow on link between two different areas   L2 router might be also L1 router in one area <a class="read-more" href="/igps/isis/">&raquo;</a></p>
+        <p>Basics  originaly ISO protocol RFC 1195 defined for (also) routing TCP/IP SPF algoritm / Dijkstra  ISO Adressing  Address consists of: IDP + DSP  IDP = Initial Domain Part  part standardized by ISO, specifies format &amp; addressing authority for DSP part  DSP = Domain Specific Part  HO-DSP (High Order part of DSL) ID (system identifier) SEL (NSAP selector)   IDP+HO-DSP can be called area address  for transition purposes there might be multiple area addresses in one area area address in OSI addressing allows l1 routers to identify packets to destinations outside their area   ISO Areas  Level 1 and Level 2 areas Level 1  L1 routers know the topology inside their area; they do not know the identity of routers outside their area L1 routers forward all traffic for destinations outside their area to level 2 router in their area L1 routers within an area, based on ID portion of the ISO address L1 routers examine the ISO address, if within their own area then they route towards destination, if not they ship the packet to nearest L2 router L1 router will become neighbor only with routers in the SAME area  Level 2  L2 routers in Level 2 area do not need to know the topology of level 1 areas as well L2 routers route based on area address (IDP+HO-DSP), they route towards areas (without regard to the internal structure of the area) L2 router will become neighbor with another L2 router REGARDLESS of area address  only L2 LSPs will flow on link between two different areas   L2 router might be also L1 router in one area <a class="read-more" href="/igps/isis/isis/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -333,7 +355,7 @@ Basics  originaly ISO protocol RFC 1195 defined for (also) routing TCP/IP SPF al
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-next" href="/vendors/" title="Vendor specifics" style="margin-right: 0px;"><label>Vendor specifics</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

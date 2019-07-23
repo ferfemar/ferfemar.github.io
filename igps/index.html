@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-18T13:19:28 DST">
+<meta name="revised" content="2019-07-23T20:04:12 DST">
 <title>IGPs :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -91,19 +91,42 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/igps/isis/" class="dd-item">
+    <li data-nav-id="/igps/isis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/igps/isis/">ISIS</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/igps/isis/isis/" class="dd-item">
         <div>
-          <a href="/igps/isis/">
-            IS-IS
+          <a href="/igps/isis/isis/">
+            Integrated IS-IS notes
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/igps/ospf/" class="dd-item">
+        </ul>
+    </li>
+    <li data-nav-id="/igps/ospf/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/igps/ospf/">OSPF</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/igps/ospf/adj_formation/" class="dd-item">
         <div>
-          <a href="/igps/ospf/">
-            OSPF
+          <a href="/igps/ospf/adj_formation/">
+            OSPF adj. formation notes
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
+    </li>
+      <li data-nav-id="/igps/ospf/troubleshooting/" class="dd-item">
+        <div>
+          <a href="/igps/ospf/troubleshooting/">
+            OSPF troubleshooting
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -253,8 +276,10 @@
    Certifications</option>
     <option value="/igps/"  selected>
    IGPs</option> 
-      <option value="/igps/isis/" > IS-IS</option>
-      <option value="/igps/ospf/" > OSPF</option>
+    <option value="/igps/isis/" >
+   ISIS</option>
+    <option value="/igps/ospf/" >
+   OSPF</option>
   
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
@@ -293,27 +318,14 @@
 
 <p>Interior gateway protocols</p>
 
-<ul class="children children-h2">
-
-<span><h2>
-        <a href="/igps/isis/" >IS-IS</a></h2>
-<p>Integrated IS-IS</p>
-</span>
-
-<span><h2>
-        <a href="/igps/ospf/" >OSPF</a></h2>
-<p>OSPF</p>
-</span>
-</ul>
-
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i><label></label></a>
-    <a class="nav nav-next" href="/igps/isis/" title="IS-IS" style="margin-right: 0px;"><label>IS-IS</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/multicast/igmp/" title="IGMP"> <i class="fa fa-chevron-left"></i><label>IGMP</label></a>
+    <a class="nav nav-next" href="/igps/isis/" title="ISIS" style="margin-right: 0px;"><label>ISIS</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -326,10 +338,6 @@
 
     
 
-    
-    <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 16/06/2019
-    </div>
     
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-18T13:19:28 DST">
+<meta name="revised" content="2019-07-23T20:04:12 DST">
 <title>ospf :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -90,19 +90,42 @@
       <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/igps/isis/" class="dd-item">
+    <li data-nav-id="/igps/isis/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/igps/isis/">ISIS</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/igps/isis/isis/" class="dd-item">
         <div>
-          <a href="/igps/isis/">
-            IS-IS
+          <a href="/igps/isis/isis/">
+            Integrated IS-IS notes
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/igps/ospf/" class="dd-item">
+        </ul>
+    </li>
+    <li data-nav-id="/igps/ospf/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/igps/ospf/">OSPF</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/igps/ospf/adj_formation/" class="dd-item">
         <div>
-          <a href="/igps/ospf/">
-            OSPF
+          <a href="/igps/ospf/adj_formation/">
+            OSPF adj. formation notes
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
+    </li>
+      <li data-nav-id="/igps/ospf/troubleshooting/" class="dd-item">
+        <div>
+          <a href="/igps/ospf/troubleshooting/">
+            OSPF troubleshooting
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -301,12 +324,32 @@
 
    <article class="post igps">
     <header class="post-header">
-        <h2 class="post-title"><a href="/igps/ospf/">OSPF</a></h2>
+        <h2 class="post-title"><a href="/igps/ospf/adj_formation/">OSPF adj. formation notes</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>OSPF notes
-Troubleshooting Neighborship problems checklist Source: iNET ZERO
- Interfaces present in [edit protocols ospf] Interfaces are not passive Interfaces are not down No FF is blocking OSPF protocol 89 Area mismatch Timer mismatch Auth. mismatch Area type mismatch Subnet mask mismatch Duplicate router-id MTU mismatch DR priority = 0 on both routers Duplicate interface ip address Interface type mismatch  Tools Show commands. Traceoptions. Monitor traffic interface. <a class="read-more" href="/igps/ospf/">&raquo;</a></p>
+        <p>Adjacency formation theory DBD Packets bits:
+ I = Initial bit M = More bit MS = Master/Slave bit  Adjacency formation practise  PCAP of simple OSPF adj. formation: here Traceoptions: R1 and R2  My notes on the packet captures and traceoptions of simple adjacency formation follows:
+ OSPF speakers send out hello packets  R1 sends hello packet to 224.0.0.5:
+Frame 5: 90 bytes on wire (720 bits), 90 bytes captured (720 bits) on interface 0 Ethernet II, Src: 50:00:00:0c:00:00 (50:00:00:0c:00:00), Dst: IPv4mcast_05 (01:00:5e:00:00:05) Internet Protocol Version 4, Src: 192. <a class="read-more" href="/igps/ospf/adj_formation/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post igps">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/igps/ospf/troubleshooting/">OSPF troubleshooting</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Troubleshooting Neighborship problems checklist Source: iNET ZERO
+ Interfaces present in [edit protocols ospf] Interfaces are not passive Interfaces are not down No FF is blocking OSPF protocol 89 Area mismatch Timer mismatch Auth. mismatch Area type mismatch Subnet mask mismatch Duplicate router-id MTU mismatch DR priority = 0 on both routers Duplicate interface ip address Interface type mismatch  Tools Show commands. Traceoptions. Monitor traffic interface.
+monitor traffic interface em1 size 1500 no-resolve detail | matching “ip proto ospf”  Authentication debugs Authentication problem is best identified using traceoptions: <a class="read-more" href="/igps/ospf/troubleshooting/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -334,7 +377,7 @@ Troubleshooting Neighborship problems checklist Source: iNET ZERO
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/igps/" title="IGPs" style="margin-right: 0px;"><label>IGPs</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-next" href="/vendors/" title="Vendor specifics" style="margin-right: 0px;"><label>Vendor specifics</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

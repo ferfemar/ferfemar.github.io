@@ -74,11 +74,6 @@
   </url>
   
   <url>
-    <loc>/igps/</loc>
-    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/vendors/iosxe_cli/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
@@ -89,12 +84,27 @@
   </url>
   
   <url>
+    <loc>/igps/isis/isis/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/vendors/junos_cli/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/igps/ospf/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/igps/ospf/adj_formation/</loc>
+    <lastmod>2019-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/igps/ospf/troubleshooting/</loc>
     <lastmod>2019-06-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -252,6 +262,10 @@
     <loc>/categories/multicast/</loc>
     <lastmod>2012-04-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/igps/</loc>
   </url>
   
   <url>
