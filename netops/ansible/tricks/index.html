@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-09-06T14:00:39 DST">
-<title>OSPF :: overloaded bits</title>
+<title>Ansible tips, tricks and notes :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="Ansible tips, tricks and notes">
 
 
 
     
   </head>
-  <body data-url="/igps/ospf/">
+  <body data-url="/netops/ansible/tricks/">
     
       <header>
   <div class="logo">
@@ -84,11 +84,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/" class="dd-item parent haschildren
+    <li data-nav-id="/igps/" class="dd-item haschildren
         ">
       <div>
-      <a href="/igps/">IGPs</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/igps/isis/" class="dd-item haschildren
@@ -106,11 +105,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/ospf/" class="dd-item parent active haschildren
+    <li data-nav-id="/igps/ospf/" class="dd-item haschildren
         ">
       <div>
-      <a href="/igps/ospf/">OSPF</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/ospf/">OSPF</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/igps/ospf/adj_formation/" class="dd-item">
@@ -161,16 +159,18 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/" class="dd-item haschildren
+    <li data-nav-id="/netops/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/">Netops</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/netops/ansible/" class="dd-item haschildren
+    <li data-nav-id="/netops/ansible/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/netops/ansible/">Ansible</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/ansible/">Ansible</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/netops/ansible/working-with-timestamp/" class="dd-item">
@@ -180,7 +180,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/netops/ansible/tricks/" class="dd-item">
+      <li data-nav-id="/netops/ansible/tricks/" class="dd-item active">
         <div>
           <a href="/netops/ansible/tricks/">
             Ansible tips, tricks and notes
@@ -290,21 +290,25 @@
     <option value="/certs/" >
    Certifications</option>
     <option value="/igps/" >
-   IGPs</option> 
-    <option value="/igps/isis/" >
-   ISIS</option>
-    <option value="/igps/ospf/"  selected>
-   OSPF</option> 
-      <option value="/igps/ospf/adj_formation/" > OSPF adj. formation notes</option>
-      <option value="/igps/ospf/troubleshooting/" > OSPF troubleshooting</option>
-  
-  
+   IGPs</option>
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
    Multicast</option>
     <option value="/netops/" >
-   Netops</option>
+   Netops</option> 
+    <option value="/netops/ansible/" >
+   Ansible</option> 
+      <option value="/netops/ansible/working-with-timestamp/" > Ansible timestamps</option>
+      <option value="/netops/ansible/tricks/"  selected> Ansible tips, tricks and notes</option>
+      <option value="/netops/ansible/ansible-w-junos/" > Junos/Ansible basics</option>
+      <option value="/netops/ansible/network-engine/" > Network-engine module</option>
+  
+    <option value="/netops/git/" >
+   GIT</option>
+    <option value="/netops/python/" >
+   Python</option>
+  
     <option value="/vendors/" >
    Vendor specifics</option>
 
@@ -329,34 +333,33 @@
       </div>
     
 
-    <h1>OSPF</h1>
+    <h1>Ansible tips, tricks and notes</h1>
     
     
     
+    
 
-<p>OSPF Notes</p>
+<h2 id="remove-key-from-dictionary">Remove key from dictionary</h2>
 
-<ul class="children children-h2">
+<p>Takes hostvars for the given inventory_hostname and reconstructs it without the groups key</p>
 
-<span><h2>
-        <a href="/igps/ospf/adj_formation/" >OSPF adj. formation notes</a></h2>
-<p>OSPF ddj. formation notes</p>
-</span>
-
-<span><h2>
-        <a href="/igps/ospf/troubleshooting/" >OSPF troubleshooting</a></h2>
-<p>OSPF troubleshooting</p>
-</span>
-</ul>
-
+<pre><code>- set_fact:
+    dict: {}
+ - set_fact:
+    dict: &quot;{{ dict | combine({item.key: item.value}) }}&quot;
+   when: item.key not in ['groups']
+   with_dict: &quot;{{hostvars[inventory_hostname]}}&quot;
+ - debug:
+    msg: &quot;{{dict}}&quot;
+</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/igps/isis/isis/" title="Integrated IS-IS notes"> <i class="fa fa-chevron-left"></i><label>Integrated IS-IS notes</label></a>
-    <a class="nav nav-next" href="/igps/ospf/adj_formation/" title="OSPF adj. formation notes" style="margin-right: 0px;"><label>OSPF adj. formation notes</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/netops/ansible/" title="Ansible"> <i class="fa fa-chevron-left"></i><label>Ansible</label></a>
+    <a class="nav nav-next" href="/netops/ansible/ansible-w-junos/" title="Junos/Ansible basics" style="margin-right: 0px;"><label>Junos/Ansible basics</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -371,7 +374,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+        <i class='fa fa-calendar'></i> Last update on 06/09/2019
     </div>
     
 

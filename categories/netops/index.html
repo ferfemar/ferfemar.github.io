@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-09-06T13:28:53 DST">
+<meta name="revised" content="2019-09-06T14:00:39 DST">
 <title>netops :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -171,17 +171,31 @@
       <a href="/netops/ansible/">Ansible</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item">
-        <div>
-          <a href="/netops/ansible/ansible-w-junos/">
-            Ansible for Junos basics
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/netops/ansible/working-with-timestamp/" class="dd-item">
         <div>
           <a href="/netops/ansible/working-with-timestamp/">
             Ansible timestamps
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/tricks/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/tricks/">
+            Ansible tips, tricks and notes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/ansible-w-junos/">
+            Junos/Ansible basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/network-engine/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/network-engine/">
+            Network-engine module
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -324,6 +338,44 @@
 
    <article class="post netops">
     <header class="post-header">
+        <h2 class="post-title"><a href="/netops/ansible/tricks/">Ansible tips, tricks and notes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p> Remove key from dictionary Takes hostvars for the given inventory_hostname and reconstructs it without the groups key
+- set_fact: dict: {} - set_fact: dict: &quot;{{ dict | combine({item.key: item.value}) }}&quot; when: item.key not in ['groups'] with_dict: &quot;{{hostvars[inventory_hostname]}}&quot; - debug: msg: &quot;{{dict}}&quot;   <a class="read-more" href="/netops/ansible/tricks/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post netops">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/netops/ansible/ansible-w-junos/">Junos/Ansible basics</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Disclaimer: may be outdated
+Retrieve config Using Galaxy module:
+ - name: Retrieve the interface configuration using Galaxy module juniper_junos_config: retrieve: 'committed' filter: '&lt;interfaces&gt;&lt;interface&gt;&lt;name&gt;{{interface}}&lt;/name&gt;&lt;unit&gt;&lt;name&gt;{{unit}}&lt;/name&gt;&lt;/unit&gt;&lt;/interface&gt;&lt;/interfaces&gt;' diff: true check: false commit: false format: xml register: iface_info  Using netconf_get module:
+- name: Retrieve the interface configuration using netconf_get module netconf_get: source: running filter: '&lt;configuration&gt;&lt;interfaces&gt;&lt;interface&gt;&lt;name&gt;{{interface}}&lt;/name&gt;&lt;unit&gt;&lt;name&gt;{{unit}}&lt;/name&gt;&lt;/unit&gt;&lt;/interface&gt;&lt;/interfaces&gt;&lt;/configuration&gt;' # filter: '&lt;configuration&gt;&lt;interfaces&gt;&lt;interface[name=&quot;ge-0/0/6&quot;]&gt;&lt;/interface&gt;&lt;/interfaces&gt;&lt;/configuration&gt;' register: iface_info  Note: Junos doesnt support xpath filtering in get-config operation <a class="read-more" href="/netops/ansible/ansible-w-junos/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post netops">
+    <header class="post-header">
         <h2 class="post-title"><a href="/netops/ansible/working-with-timestamp/">Ansible timestamps</a></h2>
     </header>
     <section class="post-excerpt">
@@ -369,23 +421,6 @@ If needed to restore the entire working directory you can for example delete eve
     <section class="post-excerpt">
         <p>Using mkvirtualenv w/ Python 3
 mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment   <a class="read-more" href="/netops/python/python-virtualenvs/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-   <article class="post netops">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/netops/ansible/ansible-w-junos/">Ansible for Junos basics</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p> test  <a class="read-more" href="/netops/ansible/ansible-w-junos/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -445,7 +480,7 @@ mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment   <a class="read-more" 
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 18/07/2019
+        <i class='fa fa-calendar'></i> Last update on 06/09/2019
     </div>
     
 

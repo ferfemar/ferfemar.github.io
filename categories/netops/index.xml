@@ -6,10 +6,32 @@
     <description>Recent content in netops on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/netops/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible tips, tricks and notes</title>
+      <link>/netops/ansible/tricks/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/tricks/</guid>
+      <description> Remove key from dictionary Takes hostvars for the given inventory_hostname and reconstructs it without the groups key
+- set_fact: dict: {} - set_fact: dict: &amp;quot;{{ dict | combine({item.key: item.value}) }}&amp;quot; when: item.key not in [&#39;groups&#39;] with_dict: &amp;quot;{{hostvars[inventory_hostname]}}&amp;quot; - debug: msg: &amp;quot;{{dict}}&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>Junos/Ansible basics</title>
+      <link>/netops/ansible/ansible-w-junos/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/ansible-w-junos/</guid>
+      <description>Disclaimer: may be outdated
+Retrieve config Using Galaxy module:
+ - name: Retrieve the interface configuration using Galaxy module juniper_junos_config: retrieve: &#39;committed&#39; filter: &#39;&amp;lt;interfaces&amp;gt;&amp;lt;interface&amp;gt;&amp;lt;name&amp;gt;{{interface}}&amp;lt;/name&amp;gt;&amp;lt;unit&amp;gt;&amp;lt;name&amp;gt;{{unit}}&amp;lt;/name&amp;gt;&amp;lt;/unit&amp;gt;&amp;lt;/interface&amp;gt;&amp;lt;/interfaces&amp;gt;&#39; diff: true check: false commit: false format: xml register: iface_info  Using netconf_get module:
+- name: Retrieve the interface configuration using netconf_get module netconf_get: source: running filter: &#39;&amp;lt;configuration&amp;gt;&amp;lt;interfaces&amp;gt;&amp;lt;interface&amp;gt;&amp;lt;name&amp;gt;{{interface}}&amp;lt;/name&amp;gt;&amp;lt;unit&amp;gt;&amp;lt;name&amp;gt;{{unit}}&amp;lt;/name&amp;gt;&amp;lt;/unit&amp;gt;&amp;lt;/interface&amp;gt;&amp;lt;/interfaces&amp;gt;&amp;lt;/configuration&amp;gt;&#39; # filter: &#39;&amp;lt;configuration&amp;gt;&amp;lt;interfaces&amp;gt;&amp;lt;interface[name=&amp;quot;ge-0/0/6&amp;quot;]&amp;gt;&amp;lt;/interface&amp;gt;&amp;lt;/interfaces&amp;gt;&amp;lt;/configuration&amp;gt;&#39; register: iface_info  Note: Junos doesnt support xpath filtering in get-config operation</description>
+    </item>
     
     <item>
       <title>Ansible timestamps</title>
@@ -43,15 +65,6 @@ If needed to restore the entire working directory you can for example delete eve
       <guid>/netops/python/python-virtualenvs/</guid>
       <description>Using mkvirtualenv w/ Python 3
 mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  </description>
-    </item>
-    
-    <item>
-      <title>Ansible for Junos basics</title>
-      <link>/netops/ansible/ansible-w-junos/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/netops/ansible/ansible-w-junos/</guid>
-      <description> test </description>
     </item>
     
     <item>

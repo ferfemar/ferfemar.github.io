@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-09-06T13:28:53 DST">
+<meta name="revised" content="2019-09-06T14:00:39 DST">
 <title>ansible :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -171,17 +171,31 @@
       <a href="/netops/ansible/">Ansible</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item">
-        <div>
-          <a href="/netops/ansible/ansible-w-junos/">
-            Ansible for Junos basics
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/netops/ansible/working-with-timestamp/" class="dd-item">
         <div>
           <a href="/netops/ansible/working-with-timestamp/">
             Ansible timestamps
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/tricks/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/tricks/">
+            Ansible tips, tricks and notes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/ansible-w-junos/">
+            Junos/Ansible basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/network-engine/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/network-engine/">
+            Network-engine module
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -324,14 +338,11 @@
 
    <article class="post netops">
     <header class="post-header">
-        <h2 class="post-title"><a href="/netops/ansible/working-with-timestamp/">Ansible timestamps</a></h2>
+        <h2 class="post-title"><a href="/netops/ansible/tricks/">Ansible tips, tricks and notes</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Timestamps in Ansible Using facts (gather_facts cannot be False):
- tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:
-- hosts: all tasks: - debug: msg=&quot;{{ lookup('pipe','date') }}&quot;  or rather formatted:
-- hosts: all tasks: - debug: msg=&quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}  Reference of other facts:
-&quot;date&quot;: &quot;2017-07-27&quot;, &quot;day&quot;: &quot;27&quot;, &quot;epoch&quot;: &quot;1501173540&quot;, &quot;hour&quot;: &quot;22&quot;, &quot;iso8601&quot;: &quot;2017-07-27T16:39:00Z&quot;, &quot;iso8601_basic&quot;: &quot;20170727T220900129160&quot;, &quot;iso8601_basic_short&quot;: &quot;20170727T220900&quot;, &quot;iso8601_micro&quot;: &quot;2017-07-27T16:39:00.129240Z&quot;, &quot;minute&quot;: &quot;09&quot;, &quot;month&quot;: &quot;07&quot;, &quot;second&quot;: &quot;00&quot;, &quot;time&quot;: &quot;22:09:00&quot;, &quot;tz&quot;: &quot;IST&quot;, &quot;tz_offset&quot;: &quot;+0530&quot;, &quot;weekday&quot;: &quot;Thursday&quot;, &quot;weekday_number&quot;: &quot;4&quot;, &quot;weeknumber&quot;: &quot;30&quot;, &quot;year&quot;: &quot;2017&quot;  Sources and References http://www. <a class="read-more" href="/netops/ansible/working-with-timestamp/">&raquo;</a></p>
+        <p> Remove key from dictionary Takes hostvars for the given inventory_hostname and reconstructs it without the groups key
+- set_fact: dict: {} - set_fact: dict: &quot;{{ dict | combine({item.key: item.value}) }}&quot; when: item.key not in ['groups'] with_dict: &quot;{{hostvars[inventory_hostname]}}&quot; - debug: msg: &quot;{{dict}}&quot;   <a class="read-more" href="/netops/ansible/tricks/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -345,10 +356,51 @@
 
    <article class="post netops">
     <header class="post-header">
-        <h2 class="post-title"><a href="/netops/ansible/ansible-w-junos/">Ansible for Junos basics</a></h2>
+        <h2 class="post-title"><a href="/netops/ansible/ansible-w-junos/">Junos/Ansible basics</a></h2>
     </header>
     <section class="post-excerpt">
-        <p> test  <a class="read-more" href="/netops/ansible/ansible-w-junos/">&raquo;</a></p>
+        <p>Disclaimer: may be outdated
+Retrieve config Using Galaxy module:
+ - name: Retrieve the interface configuration using Galaxy module juniper_junos_config: retrieve: 'committed' filter: '&lt;interfaces&gt;&lt;interface&gt;&lt;name&gt;{{interface}}&lt;/name&gt;&lt;unit&gt;&lt;name&gt;{{unit}}&lt;/name&gt;&lt;/unit&gt;&lt;/interface&gt;&lt;/interfaces&gt;' diff: true check: false commit: false format: xml register: iface_info  Using netconf_get module:
+- name: Retrieve the interface configuration using netconf_get module netconf_get: source: running filter: '&lt;configuration&gt;&lt;interfaces&gt;&lt;interface&gt;&lt;name&gt;{{interface}}&lt;/name&gt;&lt;unit&gt;&lt;name&gt;{{unit}}&lt;/name&gt;&lt;/unit&gt;&lt;/interface&gt;&lt;/interfaces&gt;&lt;/configuration&gt;' # filter: '&lt;configuration&gt;&lt;interfaces&gt;&lt;interface[name=&quot;ge-0/0/6&quot;]&gt;&lt;/interface&gt;&lt;/interfaces&gt;&lt;/configuration&gt;' register: iface_info  Note: Junos doesnt support xpath filtering in get-config operation <a class="read-more" href="/netops/ansible/ansible-w-junos/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post netops">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/netops/ansible/network-engine/">Network-engine module</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>1 --- 2 - name: Parser role 3 hosts: ios 4 roles: 5 - &quot;ansible-network.network-engine&quot; 6 tasks: 7 - name: &quot;Get router configuration&quot; 8 ios_command: 9 commands: &quot;show running-config | section ^vrf_definition&quot; 10 register: vrf_config 11 12 - name: DEBUG1 13 debug: 14 var: vrf_config.stdout[0] 15 16 - name: &quot;Parse RT data&quot; 17 command_parser: 18 file: &quot;parsers/vrf.yml&quot; 19 content: &quot;{{ vrf_config.stdout[0] }}&quot; 20 21 - name: DEBUG2 22 debug: 23 msg: &quot;TEST {{item}}&quot; 24 loop: &quot;{{vrf_data | dictsort }}&quot; 25 26   1 --- 2 - name: &quot;Parser metadata&quot; 3 parser_metadata: 4 version: 1. <a class="read-more" href="/netops/ansible/network-engine/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+   <article class="post netops">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/netops/ansible/working-with-timestamp/">Ansible timestamps</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Timestamps in Ansible Using facts (gather_facts cannot be False):
+ tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:
+- hosts: all tasks: - debug: msg=&quot;{{ lookup('pipe','date') }}&quot;  or rather formatted:
+- hosts: all tasks: - debug: msg=&quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}  Reference of other facts:
+&quot;date&quot;: &quot;2017-07-27&quot;, &quot;day&quot;: &quot;27&quot;, &quot;epoch&quot;: &quot;1501173540&quot;, &quot;hour&quot;: &quot;22&quot;, &quot;iso8601&quot;: &quot;2017-07-27T16:39:00Z&quot;, &quot;iso8601_basic&quot;: &quot;20170727T220900129160&quot;, &quot;iso8601_basic_short&quot;: &quot;20170727T220900&quot;, &quot;iso8601_micro&quot;: &quot;2017-07-27T16:39:00.129240Z&quot;, &quot;minute&quot;: &quot;09&quot;, &quot;month&quot;: &quot;07&quot;, &quot;second&quot;: &quot;00&quot;, &quot;time&quot;: &quot;22:09:00&quot;, &quot;tz&quot;: &quot;IST&quot;, &quot;tz_offset&quot;: &quot;+0530&quot;, &quot;weekday&quot;: &quot;Thursday&quot;, &quot;weekday_number&quot;: &quot;4&quot;, &quot;weeknumber&quot;: &quot;30&quot;, &quot;year&quot;: &quot;2017&quot;  Sources and References http://www. <a class="read-more" href="/netops/ansible/working-with-timestamp/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -391,7 +443,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 18/07/2019
+        <i class='fa fa-calendar'></i> Last update on 06/09/2019
     </div>
     
 

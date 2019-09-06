@@ -6,10 +6,41 @@
     <description>Recent content on overloaded bits</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible tips, tricks and notes</title>
+      <link>/netops/ansible/tricks/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/tricks/</guid>
+      <description> Remove key from dictionary Takes hostvars for the given inventory_hostname and reconstructs it without the groups key
+- set_fact: dict: {} - set_fact: dict: &amp;quot;{{ dict | combine({item.key: item.value}) }}&amp;quot; when: item.key not in [&#39;groups&#39;] with_dict: &amp;quot;{{hostvars[inventory_hostname]}}&amp;quot; - debug: msg: &amp;quot;{{dict}}&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>Junos/Ansible basics</title>
+      <link>/netops/ansible/ansible-w-junos/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/ansible-w-junos/</guid>
+      <description>Disclaimer: may be outdated
+Retrieve config Using Galaxy module:
+ - name: Retrieve the interface configuration using Galaxy module juniper_junos_config: retrieve: &#39;committed&#39; filter: &#39;&amp;lt;interfaces&amp;gt;&amp;lt;interface&amp;gt;&amp;lt;name&amp;gt;{{interface}}&amp;lt;/name&amp;gt;&amp;lt;unit&amp;gt;&amp;lt;name&amp;gt;{{unit}}&amp;lt;/name&amp;gt;&amp;lt;/unit&amp;gt;&amp;lt;/interface&amp;gt;&amp;lt;/interfaces&amp;gt;&#39; diff: true check: false commit: false format: xml register: iface_info  Using netconf_get module:
+- name: Retrieve the interface configuration using netconf_get module netconf_get: source: running filter: &#39;&amp;lt;configuration&amp;gt;&amp;lt;interfaces&amp;gt;&amp;lt;interface&amp;gt;&amp;lt;name&amp;gt;{{interface}}&amp;lt;/name&amp;gt;&amp;lt;unit&amp;gt;&amp;lt;name&amp;gt;{{unit}}&amp;lt;/name&amp;gt;&amp;lt;/unit&amp;gt;&amp;lt;/interface&amp;gt;&amp;lt;/interfaces&amp;gt;&amp;lt;/configuration&amp;gt;&#39; # filter: &#39;&amp;lt;configuration&amp;gt;&amp;lt;interfaces&amp;gt;&amp;lt;interface[name=&amp;quot;ge-0/0/6&amp;quot;]&amp;gt;&amp;lt;/interface&amp;gt;&amp;lt;/interfaces&amp;gt;&amp;lt;/configuration&amp;gt;&#39; register: iface_info  Note: Junos doesnt support xpath filtering in get-config operation</description>
+    </item>
+    
+    <item>
+      <title>Network-engine module</title>
+      <link>/netops/ansible/network-engine/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/netops/ansible/network-engine/</guid>
+      <description>1 --- 2 - name: Parser role 3 hosts: ios 4 roles: 5 - &amp;quot;ansible-network.network-engine&amp;quot; 6 tasks: 7 - name: &amp;quot;Get router configuration&amp;quot; 8 ios_command: 9 commands: &amp;quot;show running-config | section ^vrf_definition&amp;quot; 10 register: vrf_config 11 12 - name: DEBUG1 13 debug: 14 var: vrf_config.stdout[0] 15 16 - name: &amp;quot;Parse RT data&amp;quot; 17 command_parser: 18 file: &amp;quot;parsers/vrf.yml&amp;quot; 19 content: &amp;quot;{{ vrf_config.stdout[0] }}&amp;quot; 20 21 - name: DEBUG2 22 debug: 23 msg: &amp;quot;TEST {{item}}&amp;quot; 24 loop: &amp;quot;{{vrf_data | dictsort }}&amp;quot; 25 26   1 --- 2 - name: &amp;quot;Parser metadata&amp;quot; 3 parser_metadata: 4 version: 1.</description>
+    </item>
     
     <item>
       <title>Ansible timestamps</title>
@@ -143,15 +174,6 @@ mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment  </description>
 Basics  Variants
  RFC 4761 - Virtual Private LAN Service (VPLS) - Using BGP for Auto-Discovery and Signaling RFC 4762 - Virtual Private LAN Service (VPLS) Using Label Distribution Protocol (LDP) Signaling  BGP auto-discovery
  PEs auto-discover other PEs in the same VPLS instance automatic pseudowire establishment full MPLS LSP mesh between PEs (RSVP or LDP signalled)  BGP or LDP for service label distribution</description>
-    </item>
-    
-    <item>
-      <title>Ansible for Junos basics</title>
-      <link>/netops/ansible/ansible-w-junos/</link>
-      <pubDate>Fri, 06 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/netops/ansible/ansible-w-junos/</guid>
-      <description> test </description>
     </item>
     
     <item>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-09-06T14:00:39 DST">
-<title>OSPF :: overloaded bits</title>
+<title>Network-engine module :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -19,13 +19,13 @@
 <script type="text/javascript">
       var baseurl = "\/";
 </script>
-<meta name="description" content="">
+<meta name="description" content="Ansible network-engine module">
 
 
 
     
   </head>
-  <body data-url="/igps/ospf/">
+  <body data-url="/netops/ansible/network-engine/">
     
       <header>
   <div class="logo">
@@ -84,11 +84,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/" class="dd-item parent haschildren
+    <li data-nav-id="/igps/" class="dd-item haschildren
         ">
       <div>
-      <a href="/igps/">IGPs</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/">IGPs</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/igps/isis/" class="dd-item haschildren
@@ -106,11 +105,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/igps/ospf/" class="dd-item parent active haschildren
+    <li data-nav-id="/igps/ospf/" class="dd-item haschildren
         ">
       <div>
-      <a href="/igps/ospf/">OSPF</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/igps/ospf/">OSPF</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/igps/ospf/adj_formation/" class="dd-item">
@@ -161,16 +159,18 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/netops/" class="dd-item haschildren
+    <li data-nav-id="/netops/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/netops/">Netops</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/">Netops</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/netops/ansible/" class="dd-item haschildren
+    <li data-nav-id="/netops/ansible/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/netops/ansible/">Ansible</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/netops/ansible/">Ansible</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/netops/ansible/working-with-timestamp/" class="dd-item">
@@ -194,7 +194,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/netops/ansible/network-engine/" class="dd-item">
+      <li data-nav-id="/netops/ansible/network-engine/" class="dd-item active">
         <div>
           <a href="/netops/ansible/network-engine/">
             Network-engine module
@@ -290,21 +290,25 @@
     <option value="/certs/" >
    Certifications</option>
     <option value="/igps/" >
-   IGPs</option> 
-    <option value="/igps/isis/" >
-   ISIS</option>
-    <option value="/igps/ospf/"  selected>
-   OSPF</option> 
-      <option value="/igps/ospf/adj_formation/" > OSPF adj. formation notes</option>
-      <option value="/igps/ospf/troubleshooting/" > OSPF troubleshooting</option>
-  
-  
+   IGPs</option>
     <option value="/mpls-vpns/" >
    MPLS VPNs</option>
     <option value="/multicast/" >
    Multicast</option>
     <option value="/netops/" >
-   Netops</option>
+   Netops</option> 
+    <option value="/netops/ansible/" >
+   Ansible</option> 
+      <option value="/netops/ansible/working-with-timestamp/" > Ansible timestamps</option>
+      <option value="/netops/ansible/tricks/" > Ansible tips, tricks and notes</option>
+      <option value="/netops/ansible/ansible-w-junos/" > Junos/Ansible basics</option>
+      <option value="/netops/ansible/network-engine/"  selected> Network-engine module</option>
+  
+    <option value="/netops/git/" >
+   GIT</option>
+    <option value="/netops/python/" >
+   Python</option>
+  
     <option value="/vendors/" >
    Vendor specifics</option>
 
@@ -329,34 +333,126 @@
       </div>
     
 
-    <h1>OSPF</h1>
+    <h1>Network-engine module</h1>
     
     
     
+    <pre><code>    1 	---
+    2 	 - name: Parser role
+    3 	   hosts: ios
+    4 	   roles:
+    5 	     - &quot;ansible-network.network-engine&quot;
+    6 	   tasks:
+    7 	    - name: &quot;Get router configuration&quot;
+    8 	      ios_command:
+    9 	        commands: &quot;show running-config | section ^vrf_definition&quot;
+   10 	      register: vrf_config
+   11 	
+   12 	    - name: DEBUG1
+   13 	      debug:
+   14 	       var: vrf_config.stdout[0]
+   15 	
+   16 	    - name: &quot;Parse RT data&quot;
+   17 	      command_parser:
+   18 	        file: &quot;parsers/vrf.yml&quot;
+   19 	        content: &quot;{{ vrf_config.stdout[0] }}&quot;
+   20 	    
+   21 	    - name: DEBUG2
+   22 	      debug:
+   23 	       msg: &quot;TEST {{item}}&quot;
+   24 	      loop: &quot;{{vrf_data | dictsort }}&quot;
+   25 	
+   26 	    
+</code></pre>
 
-<p>OSPF Notes</p>
+<pre><code>    1 	---
+    2 	 - name: &quot;Parser metadata&quot;
+    3 	   parser_metadata:
+    4 	     version: 1.0
+    5 	     command: &quot;show running-config | section ^vrf definition&quot;
+    6 	     network_os: ios
+    7 	
+    8 	 - name: &quot;Match each VRF&quot;
+    9 	   pattern_match:
+   10 	      regex: &quot;vrf\\s+definition&quot;
+   11 	      match_all: true
+   12 	      match_greedy: true
+   13 	   register: vrf_list
+   14 	  #  export: yes
+   15 	
+   16 	 - name: &quot;Match VRF components&quot;
+   17 	   pattern_group:
+   18 	
+   19 	     - name: &quot;Parse VRF name&quot;
+   20 	       pattern_match:
+   21 	         regex: &quot;vrf\\s+definition\\s+(\\S+)&quot;
+   22 	         content: &quot;{{ item }}&quot;
+   23 	       register: name
+   24 	
+   25 	     - name: &quot;Parse imported RTs&quot;
+   26 	       pattern_match:
+   27 	         regex: &quot;route-target\\s+import\\s+(\\d+:\\d+)&quot;
+   28 	         content: &quot;{{ item }}&quot;
+   29 	         match_all: true
+   30 	       register: rti_matches
+   31 	
+   32 	     - name: &quot;Parse exported RTs&quot;
+   33 	       pattern_match:
+   34 	         regex: &quot;route-target\\s+export\\s+(\\d+:\\d+)&quot;
+   35 	         content: &quot;{{ item }}&quot;
+   36 	         match_all: true
+   37 	       register: rte_matches
+   38 	
+   39 	   loop: &quot;{{ vrf_list }}&quot;
+   40 	   register: vrf_components
+   41 	   #export: yes
+   42 	
+   43 	 - name: &quot;Create JSON structure&quot;
+   44 	   json_template:
+   45 	     template:
+   46 	       - key: &quot;{{ item.name.matches[0] }}&quot;
+   47 	         object:
+   48 	          - key: route_import
+   49 	            value: &quot;{{ item.rti_matches | map(attribute='matches') | list }}&quot;
+   50 	          - key: route_export
+   51 	            value: &quot;{{ item.rte_matches | map(attribute='matches') | list }}&quot;
+   52 	   loop: &quot;{{ vrf_components }}&quot;
+   53 	   export: true
+   54 	   export_as: dict
+   55 	   register: vrf_data
+</code></pre>
 
-<ul class="children children-h2">
-
-<span><h2>
-        <a href="/igps/ospf/adj_formation/" >OSPF adj. formation notes</a></h2>
-<p>OSPF ddj. formation notes</p>
-</span>
-
-<span><h2>
-        <a href="/igps/ospf/troubleshooting/" >OSPF troubleshooting</a></h2>
-<p>OSPF troubleshooting</p>
-</span>
-</ul>
-
+<pre><code>    1 	cra@lablinux:~/workbench/network-engine tests$ ansible-playbook do_parsing.yml
+    2 	
+    3 	PLAY [Parser role] **************************************************************************************************************************************************************************************************************************************************
+    4 	TASK [Get router configuration] *************************************************************************************************************************************************************************************************************************************ok: [CSR]
+    5 	
+    6 	TASK [DEBUG1] *******************************************************************************************************************************************************************************************************************************************************ok: [CSR] =&gt; {
+    7 	    &quot;vrf_config.stdout[0]&quot;: &quot;vrf definition VPN-A\n rd 1.1.1.1:1\n route-target export 65000:1\n route-target export 65000:2\n route-target export 65000:5\n route-target import 65000:5\n route-target import 65000:7\nvrf definition VPN-B\n rd 1.1.1.1:2\n route-target export 65000:9\n route-target export 65000:7\n route-target export 65000:1\n route-target import 65000:22\n route-target import 65000:11&quot;
+    8 	}
+    9 	
+   10 	TASK [Parse RT data] ************************************************************************************************************************************************************************************************************************************************ok: [CSR]
+   11 	
+   12 	TASK [DEBUG2] *******************************************************************************************************************************************************************************************************************************************************ok: [CSR] =&gt; (item=[u'VPN-A', {u'route_export': [u'65000:1', u'65000:2', u'65000:5'], u'route_import': [u'65000:5', u'65000:7']}]) =&gt; {
+   13 	    &quot;msg&quot;: &quot;TEST [u'VPN-A', {u'route_export': [u'65000:1', u'65000:2', u'65000:5'], u'route_import': [u'65000:5', u'65000:7']}]&quot;
+   14 	}
+   15 	ok: [CSR] =&gt; (item=[u'VPN-B', {u'route_export': [u'65000:9', u'65000:7', u'65000:1'], u'route_import': [u'65000:22', u'65000:11']}]) =&gt; {
+   16 	    &quot;msg&quot;: &quot;TEST [u'VPN-B', {u'route_export': [u'65000:9', u'65000:7', u'65000:1'], u'route_import': [u'65000:22', u'65000:11']}]&quot;
+   17 	}
+   18 	
+   19 	PLAY RECAP **********************************************************************************************************************************************************************************************************************************************************CSR                        : ok=4    changed=0    unreachable=0    failed=0
+   20 	
+   21 	cra@lablinux:~/workbench/network-engine tests$
+   22 
+</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/igps/isis/isis/" title="Integrated IS-IS notes"> <i class="fa fa-chevron-left"></i><label>Integrated IS-IS notes</label></a>
-    <a class="nav nav-next" href="/igps/ospf/adj_formation/" title="OSPF adj. formation notes" style="margin-right: 0px;"><label>OSPF adj. formation notes</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/netops/ansible/ansible-w-junos/" title="Junos/Ansible basics"> <i class="fa fa-chevron-left"></i><label>Junos/Ansible basics</label></a>
+    <a class="nav nav-next" href="/netops/ansible/working-with-timestamp/" title="Ansible timestamps" style="margin-right: 0px;"><label>Ansible timestamps</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -371,7 +467,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 16/06/2019
+        <i class='fa fa-calendar'></i> Last update on 06/09/2019
     </div>
     
 

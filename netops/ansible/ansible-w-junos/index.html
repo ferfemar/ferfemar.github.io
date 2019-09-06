@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-09-06T13:28:54 DST">
-<title>Ansible for Junos basics :: overloaded bits</title>
+<meta name="revised" content="2019-09-06T14:00:39 DST">
+<title>Junos/Ansible basics :: overloaded bits</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -173,17 +173,31 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item active">
-        <div>
-          <a href="/netops/ansible/ansible-w-junos/">
-            Ansible for Junos basics
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/netops/ansible/working-with-timestamp/" class="dd-item">
         <div>
           <a href="/netops/ansible/working-with-timestamp/">
             Ansible timestamps
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/tricks/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/tricks/">
+            Ansible tips, tricks and notes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/ansible-w-junos/" class="dd-item active">
+        <div>
+          <a href="/netops/ansible/ansible-w-junos/">
+            Junos/Ansible basics
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/netops/ansible/network-engine/" class="dd-item">
+        <div>
+          <a href="/netops/ansible/network-engine/">
+            Network-engine module
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -285,8 +299,10 @@
    Netops</option> 
     <option value="/netops/ansible/" >
    Ansible</option> 
-      <option value="/netops/ansible/ansible-w-junos/"  selected> Ansible for Junos basics</option>
       <option value="/netops/ansible/working-with-timestamp/" > Ansible timestamps</option>
+      <option value="/netops/ansible/tricks/" > Ansible tips, tricks and notes</option>
+      <option value="/netops/ansible/ansible-w-junos/"  selected> Junos/Ansible basics</option>
+      <option value="/netops/ansible/network-engine/" > Network-engine module</option>
   
     <option value="/netops/git/" >
    GIT</option>
@@ -317,21 +333,48 @@
       </div>
     
 
-    <h1>Ansible for Junos basics</h1>
+    <h1>Junos/Ansible basics</h1>
     
     
     
     
 
-<h1 id="test">test</h1>
+<p>Disclaimer: may be outdated</p>
+
+<h2 id="retrieve-config">Retrieve config</h2>
+
+<p>Using Galaxy module:</p>
+
+<pre><code> - name: Retrieve the interface configuration using Galaxy module
+      juniper_junos_config:
+        retrieve: 'committed'
+        filter: '&lt;interfaces&gt;&lt;interface&gt;&lt;name&gt;{{interface}}&lt;/name&gt;&lt;unit&gt;&lt;name&gt;{{unit}}&lt;/name&gt;&lt;/unit&gt;&lt;/interface&gt;&lt;/interfaces&gt;'
+        diff: true
+        check: false
+        commit: false
+        format: xml
+      register: iface_info     
+</code></pre>
+
+<p>Using netconf_get module:</p>
+
+<pre><code>- name: Retrieve the interface configuration using netconf_get module
+      netconf_get: 
+        source: running
+        filter: '&lt;configuration&gt;&lt;interfaces&gt;&lt;interface&gt;&lt;name&gt;{{interface}}&lt;/name&gt;&lt;unit&gt;&lt;name&gt;{{unit}}&lt;/name&gt;&lt;/unit&gt;&lt;/interface&gt;&lt;/interfaces&gt;&lt;/configuration&gt;'
+        # filter: '&lt;configuration&gt;&lt;interfaces&gt;&lt;interface[name=&quot;ge-0/0/6&quot;]&gt;&lt;/interface&gt;&lt;/interfaces&gt;&lt;/configuration&gt;'
+      register: iface_info
+</code></pre>
+
+<p>Note: Junos doesnt support xpath filtering in get-config operation</p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/netops/ansible/working-with-timestamp/" title="Ansible timestamps"> <i class="fa fa-chevron-left"></i><label>Ansible timestamps</label></a>
-    <a class="nav nav-next" href="/netops/python/" title="Python" style="margin-right: 0px;"><label>Python</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/netops/ansible/tricks/" title="Ansible tips, tricks and notes"> <i class="fa fa-chevron-left"></i><label>Ansible tips, tricks and notes</label></a>
+    <a class="nav nav-next" href="/netops/ansible/network-engine/" title="Network-engine module" style="margin-right: 0px;"><label>Network-engine module</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -346,7 +389,7 @@
 
     
     <div class="date">
-        <i class='fa fa-calendar'></i> Last update on 06/04/2012
+        <i class='fa fa-calendar'></i> Last update on 06/09/2019
     </div>
     
 

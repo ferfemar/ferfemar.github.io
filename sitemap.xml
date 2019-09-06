@@ -4,35 +4,50 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/netops/ansible/</loc>
-    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/netops/ansible/working-with-timestamp/</loc>
-    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+    <loc>/netops/ansible/tricks/</loc>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/netops/ansible/ansible-w-junos/</loc>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netops/ansible/network-engine/</loc>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/ansible/</loc>
-    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/netops/</loc>
-    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2019-09-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/netops/ansible/working-with-timestamp/</loc>
+    <lastmod>2019-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -230,11 +245,6 @@
     <loc>/categories/vpn/</loc>
     <lastmod>2019-05-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/netops/ansible/ansible-w-junos/</loc>
-    <lastmod>2012-04-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>

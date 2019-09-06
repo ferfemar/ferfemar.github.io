@@ -11,14 +11,14 @@
 	"title": "Ansible",
 	"tags": [],
 	"description": "",
-	"content": " Ansible  Ansible timestamps Working with timestamps in Ansible\n  Ansible for Junos basics Basics of using Ansible to manage Juniper devices\n  "
+	"content": " Ansible  Ansible tips, tricks and notes Ansible tips, tricks and notes\n  Junos/Ansible basics Basics of using Ansible to manage Juniper devices\n  Network-engine module Ansible network-engine module\n  Ansible timestamps Working with timestamps in Ansible\n  "
 },
 {
-	"uri": "/netops/ansible/working-with-timestamp/",
-	"title": "Ansible timestamps",
+	"uri": "/netops/ansible/tricks/",
+	"title": "Ansible tips, tricks and notes",
 	"tags": [],
-	"description": "Working with timestamps in Ansible",
-	"content": " Timestamps in Ansible Using facts (gather_facts cannot be False):\n tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:\n- hosts: all tasks: - debug: msg=\u0026quot;{{ lookup('pipe','date') }}\u0026quot;  or rather formatted:\n- hosts: all tasks: - debug: msg=\u0026quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}  Reference of other facts:\n\u0026quot;date\u0026quot;: \u0026quot;2017-07-27\u0026quot;, \u0026quot;day\u0026quot;: \u0026quot;27\u0026quot;, \u0026quot;epoch\u0026quot;: \u0026quot;1501173540\u0026quot;, \u0026quot;hour\u0026quot;: \u0026quot;22\u0026quot;, \u0026quot;iso8601\u0026quot;: \u0026quot;2017-07-27T16:39:00Z\u0026quot;, \u0026quot;iso8601_basic\u0026quot;: \u0026quot;20170727T220900129160\u0026quot;, \u0026quot;iso8601_basic_short\u0026quot;: \u0026quot;20170727T220900\u0026quot;, \u0026quot;iso8601_micro\u0026quot;: \u0026quot;2017-07-27T16:39:00.129240Z\u0026quot;, \u0026quot;minute\u0026quot;: \u0026quot;09\u0026quot;, \u0026quot;month\u0026quot;: \u0026quot;07\u0026quot;, \u0026quot;second\u0026quot;: \u0026quot;00\u0026quot;, \u0026quot;time\u0026quot;: \u0026quot;22:09:00\u0026quot;, \u0026quot;tz\u0026quot;: \u0026quot;IST\u0026quot;, \u0026quot;tz_offset\u0026quot;: \u0026quot;+0530\u0026quot;, \u0026quot;weekday\u0026quot;: \u0026quot;Thursday\u0026quot;, \u0026quot;weekday_number\u0026quot;: \u0026quot;4\u0026quot;, \u0026quot;weeknumber\u0026quot;: \u0026quot;30\u0026quot;, \u0026quot;year\u0026quot;: \u0026quot;2017\u0026quot;  Sources and References http://www.mydailytutorials.com/working-date-timestamp-ansible/\n"
+	"description": "Ansible tips, tricks and notes",
+	"content": " Remove key from dictionary Takes hostvars for the given inventory_hostname and reconstructs it without the groups key\n- set_fact: dict: {} - set_fact: dict: \u0026quot;{{ dict | combine({item.key: item.value}) }}\u0026quot; when: item.key not in ['groups'] with_dict: \u0026quot;{{hostvars[inventory_hostname]}}\u0026quot; - debug: msg: \u0026quot;{{dict}}\u0026quot;  "
 },
 {
 	"uri": "/categories/",
@@ -26,6 +26,20 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/netops/ansible/ansible-w-junos/",
+	"title": "Junos/Ansible basics",
+	"tags": [],
+	"description": "Basics of using Ansible to manage Juniper devices",
+	"content": " Disclaimer: may be outdated\nRetrieve config Using Galaxy module:\n - name: Retrieve the interface configuration using Galaxy module juniper_junos_config: retrieve: 'committed' filter: '\u0026lt;interfaces\u0026gt;\u0026lt;interface\u0026gt;\u0026lt;name\u0026gt;{{interface}}\u0026lt;/name\u0026gt;\u0026lt;unit\u0026gt;\u0026lt;name\u0026gt;{{unit}}\u0026lt;/name\u0026gt;\u0026lt;/unit\u0026gt;\u0026lt;/interface\u0026gt;\u0026lt;/interfaces\u0026gt;' diff: true check: false commit: false format: xml register: iface_info  Using netconf_get module:\n- name: Retrieve the interface configuration using netconf_get module netconf_get: source: running filter: '\u0026lt;configuration\u0026gt;\u0026lt;interfaces\u0026gt;\u0026lt;interface\u0026gt;\u0026lt;name\u0026gt;{{interface}}\u0026lt;/name\u0026gt;\u0026lt;unit\u0026gt;\u0026lt;name\u0026gt;{{unit}}\u0026lt;/name\u0026gt;\u0026lt;/unit\u0026gt;\u0026lt;/interface\u0026gt;\u0026lt;/interfaces\u0026gt;\u0026lt;/configuration\u0026gt;' # filter: '\u0026lt;configuration\u0026gt;\u0026lt;interfaces\u0026gt;\u0026lt;interface[name=\u0026quot;ge-0/0/6\u0026quot;]\u0026gt;\u0026lt;/interface\u0026gt;\u0026lt;/interfaces\u0026gt;\u0026lt;/configuration\u0026gt;' register: iface_info  Note: Junos doesnt support xpath filtering in get-config operation\n"
+},
+{
+	"uri": "/netops/ansible/network-engine/",
+	"title": "Network-engine module",
+	"tags": [],
+	"description": "Ansible network-engine module",
+	"content": " 1 --- 2 - name: Parser role 3 hosts: ios 4 roles: 5 - \u0026quot;ansible-network.network-engine\u0026quot; 6 tasks: 7 - name: \u0026quot;Get router configuration\u0026quot; 8 ios_command: 9 commands: \u0026quot;show running-config | section ^vrf_definition\u0026quot; 10 register: vrf_config 11 12 - name: DEBUG1 13 debug: 14 var: vrf_config.stdout[0] 15 16 - name: \u0026quot;Parse RT data\u0026quot; 17 command_parser: 18 file: \u0026quot;parsers/vrf.yml\u0026quot; 19 content: \u0026quot;{{ vrf_config.stdout[0] }}\u0026quot; 20 21 - name: DEBUG2 22 debug: 23 msg: \u0026quot;TEST {{item}}\u0026quot; 24 loop: \u0026quot;{{vrf_data | dictsort }}\u0026quot; 25 26   1 --- 2 - name: \u0026quot;Parser metadata\u0026quot; 3 parser_metadata: 4 version: 1.0 5 command: \u0026quot;show running-config | section ^vrf definition\u0026quot; 6 network_os: ios 7 8 - name: \u0026quot;Match each VRF\u0026quot; 9 pattern_match: 10 regex: \u0026quot;vrf\\\\s+definition\u0026quot; 11 match_all: true 12 match_greedy: true 13 register: vrf_list 14 # export: yes 15 16 - name: \u0026quot;Match VRF components\u0026quot; 17 pattern_group: 18 19 - name: \u0026quot;Parse VRF name\u0026quot; 20 pattern_match: 21 regex: \u0026quot;vrf\\\\s+definition\\\\s+(\\\\S+)\u0026quot; 22 content: \u0026quot;{{ item }}\u0026quot; 23 register: name 24 25 - name: \u0026quot;Parse imported RTs\u0026quot; 26 pattern_match: 27 regex: \u0026quot;route-target\\\\s+import\\\\s+(\\\\d+:\\\\d+)\u0026quot; 28 content: \u0026quot;{{ item }}\u0026quot; 29 match_all: true 30 register: rti_matches 31 32 - name: \u0026quot;Parse exported RTs\u0026quot; 33 pattern_match: 34 regex: \u0026quot;route-target\\\\s+export\\\\s+(\\\\d+:\\\\d+)\u0026quot; 35 content: \u0026quot;{{ item }}\u0026quot; 36 match_all: true 37 register: rte_matches 38 39 loop: \u0026quot;{{ vrf_list }}\u0026quot; 40 register: vrf_components 41 #export: yes 42 43 - name: \u0026quot;Create JSON structure\u0026quot; 44 json_template: 45 template: 46 - key: \u0026quot;{{ item.name.matches[0] }}\u0026quot; 47 object: 48 - key: route_import 49 value: \u0026quot;{{ item.rti_matches | map(attribute='matches') | list }}\u0026quot; 50 - key: route_export 51 value: \u0026quot;{{ item.rte_matches | map(attribute='matches') | list }}\u0026quot; 52 loop: \u0026quot;{{ vrf_components }}\u0026quot; 53 export: true 54 export_as: dict 55 register: vrf_data   1 cra@lablinux:~/workbench/network-engine tests$ ansible-playbook do_parsing.yml 2 3 PLAY [Parser role] ************************************************************************************************************************************************************************************************************************************************** 4 TASK [Get router configuration] *************************************************************************************************************************************************************************************************************************************ok: [CSR] 5 6 TASK [DEBUG1] *******************************************************************************************************************************************************************************************************************************************************ok: [CSR] =\u0026gt; { 7 \u0026quot;vrf_config.stdout[0]\u0026quot;: \u0026quot;vrf definition VPN-A\\n rd 1.1.1.1:1\\n route-target export 65000:1\\n route-target export 65000:2\\n route-target export 65000:5\\n route-target import 65000:5\\n route-target import 65000:7\\nvrf definition VPN-B\\n rd 1.1.1.1:2\\n route-target export 65000:9\\n route-target export 65000:7\\n route-target export 65000:1\\n route-target import 65000:22\\n route-target import 65000:11\u0026quot; 8 } 9 10 TASK [Parse RT data] ************************************************************************************************************************************************************************************************************************************************ok: [CSR] 11 12 TASK [DEBUG2] *******************************************************************************************************************************************************************************************************************************************************ok: [CSR] =\u0026gt; (item=[u'VPN-A', {u'route_export': [u'65000:1', u'65000:2', u'65000:5'], u'route_import': [u'65000:5', u'65000:7']}]) =\u0026gt; { 13 \u0026quot;msg\u0026quot;: \u0026quot;TEST [u'VPN-A', {u'route_export': [u'65000:1', u'65000:2', u'65000:5'], u'route_import': [u'65000:5', u'65000:7']}]\u0026quot; 14 } 15 ok: [CSR] =\u0026gt; (item=[u'VPN-B', {u'route_export': [u'65000:9', u'65000:7', u'65000:1'], u'route_import': [u'65000:22', u'65000:11']}]) =\u0026gt; { 16 \u0026quot;msg\u0026quot;: \u0026quot;TEST [u'VPN-B', {u'route_export': [u'65000:9', u'65000:7', u'65000:1'], u'route_import': [u'65000:22', u'65000:11']}]\u0026quot; 17 } 18 19 PLAY RECAP **********************************************************************************************************************************************************************************************************************************************************CSR : ok=4 changed=0 unreachable=0 failed=0 20 21 cra@lablinux:~/workbench/network-engine tests$ 22  "
 },
 {
 	"uri": "/categories/ansible/",
@@ -40,6 +54,13 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/netops/ansible/working-with-timestamp/",
+	"title": "Ansible timestamps",
+	"tags": [],
+	"description": "Working with timestamps in Ansible",
+	"content": " Timestamps in Ansible Using facts (gather_facts cannot be False):\n tasks: - name: Ansible date fact example debug: var=ansible_date_time.date  Using local time via lookup:\n- hosts: all tasks: - debug: msg=\u0026quot;{{ lookup('pipe','date') }}\u0026quot;  or rather formatted:\n- hosts: all tasks: - debug: msg=\u0026quot;{{ lookup('pipe','date +%Y-%m-%d-%H-%M-%S') }}  Reference of other facts:\n\u0026quot;date\u0026quot;: \u0026quot;2017-07-27\u0026quot;, \u0026quot;day\u0026quot;: \u0026quot;27\u0026quot;, \u0026quot;epoch\u0026quot;: \u0026quot;1501173540\u0026quot;, \u0026quot;hour\u0026quot;: \u0026quot;22\u0026quot;, \u0026quot;iso8601\u0026quot;: \u0026quot;2017-07-27T16:39:00Z\u0026quot;, \u0026quot;iso8601_basic\u0026quot;: \u0026quot;20170727T220900129160\u0026quot;, \u0026quot;iso8601_basic_short\u0026quot;: \u0026quot;20170727T220900\u0026quot;, \u0026quot;iso8601_micro\u0026quot;: \u0026quot;2017-07-27T16:39:00.129240Z\u0026quot;, \u0026quot;minute\u0026quot;: \u0026quot;09\u0026quot;, \u0026quot;month\u0026quot;: \u0026quot;07\u0026quot;, \u0026quot;second\u0026quot;: \u0026quot;00\u0026quot;, \u0026quot;time\u0026quot;: \u0026quot;22:09:00\u0026quot;, \u0026quot;tz\u0026quot;: \u0026quot;IST\u0026quot;, \u0026quot;tz_offset\u0026quot;: \u0026quot;+0530\u0026quot;, \u0026quot;weekday\u0026quot;: \u0026quot;Thursday\u0026quot;, \u0026quot;weekday_number\u0026quot;: \u0026quot;4\u0026quot;, \u0026quot;weeknumber\u0026quot;: \u0026quot;30\u0026quot;, \u0026quot;year\u0026quot;: \u0026quot;2017\u0026quot;  Sources and References http://www.mydailytutorials.com/working-date-timestamp-ansible/\n"
 },
 {
 	"uri": "/netops/python/",
@@ -294,13 +315,6 @@
 	"content": ""
 },
 {
-	"uri": "/netops/ansible/ansible-w-junos/",
-	"title": "Ansible for Junos basics",
-	"tags": [],
-	"description": "Basics of using Ansible to manage Juniper devices",
-	"content": " test "
-},
-{
 	"uri": "/multicast/igmp/",
 	"title": "IGMP",
 	"tags": [],
@@ -347,7 +361,7 @@
 	"title": "Netops",
 	"tags": [],
 	"description": "",
-	"content": " Netops  Ansible  Ansible Ansible timestamps Working with timestamps in Ansible Ansible for Junos basics Basics of using Ansible to manage Juniper devices   Python  Python Working with Excel in Python Working with Excel in Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   GIT  GIT Git Panic Commands What to do when you screw up in GIT   "
+	"content": " Netops  Ansible  Ansible Ansible tips, tricks and notes Ansible tips, tricks and notes Junos/Ansible basics Basics of using Ansible to manage Juniper devices Network-engine module Ansible network-engine module Ansible timestamps Working with timestamps in Ansible   Python  Python Working with Excel in Python Working with Excel in Python Python Virtual Enviroments Notes for working with virualenvs Python basics Cheat sheet for absolute basics of Python   GIT  GIT Git Panic Commands What to do when you screw up in GIT   "
 },
 {
 	"uri": "/tags/",
